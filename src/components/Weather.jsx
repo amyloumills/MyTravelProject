@@ -42,7 +42,7 @@ const Weather = () => {
 	}, [latitude, longitude]);
 	console.log(weather);
 	if (!cityName || !temperature || !weather) {
-		return <div className="container">Loading...</div>;
+		return <div className="container">Weather loading...</div>;
 	}
 
 	return (

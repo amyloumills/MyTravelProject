@@ -1,7 +1,12 @@
 import React from "react";
+import SocialMedia from "./SocialMedia";
 
 const Footer = () => {
-	return <></>;
+	return (
+		<>
+			<SocialMedia />
+		</>
+	);
 };
 
 export default Footer;
