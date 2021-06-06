@@ -40,7 +40,6 @@ const Weather = () => {
 	useEffect(() => {
 		if (longitude && latitude) getWeather();
 	}, [latitude, longitude]);
-	//conditional return here
 	console.log(weather);
 	if (!cityName || !temperature || !weather) {
 		return <div className="container">Loading...</div>;

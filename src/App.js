@@ -18,7 +18,10 @@ const App = () => {
 			{page === 3 && <Dashboard />}
 			{page === 4 && <Contact />}
 			<Footer />
-			<div onClick={() => setPage(1)}>Click Me</div>
+			<div onClick={() => setPage(1)}>Sign In</div>
+			<div onClick={() => setPage(2)}>Weather</div>
+			<div onClick={() => setPage(3)}>Dashboard</div>
+			<div onClick={() => setPage(4)}>Contact</div>
 		</>
 	);
 };

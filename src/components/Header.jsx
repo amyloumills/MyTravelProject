@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class Header extends Component {
+const Header = () => {
+	return <></>;
+};
 
-    render() { 
-        return ( <>
-        <button onClick={() => this.props.setScreenMode(1)}>Back
-            </button>
-            </>);
-    }
-}
- 
 export default Header;
