@@ -57,6 +57,7 @@ const Weather = () => {
 						src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`}
 						alt="weather icon"
 					/>
+					{/* <button onClick={() => getWeather()}>Reload!</button> */}
 				</div>
 			</div>
 		</>
