@@ -14,9 +14,15 @@ const Weather = () => {
 		setLatitude(position.coords.latitude);
 		setLongitude(position.coords.longitude);
 	};
-
+	const showError = (error) => {
+		<p>Unfortunately we can't display the weather at this time.</p>;
+	};
 	const getLocation = async () => {
-		await window.navigator.geolocation.getCurrentPosition(savePositionToState);
+		await window.navigator.geolocation.getCurrentPosition(
+			savePositionToState
+			// showError,
+			// { timeout: 8000 }
+		);
 	};
 	useEffect(() => {
 		getLocation();
@@ -57,7 +63,6 @@ const Weather = () => {
 						src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`}
 						alt="weather icon"
 					/>
-					{/* <button onClick={() => getWeather()}>Reload!</button> */}
 				</div>
 			</div>
 		</>

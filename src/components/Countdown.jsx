@@ -1,56 +1,70 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Countdown = () => {
-	const calculateTimeLeft = () => {
-		let year = new Date().getFullYear();
+	const [timerDays, setTimerDays] = useState("00");
+	const [timerHours, setTimerHours] = useState("00");
+	const [timerMinutes, setTimerMinutes] = useState("00");
+	const [timerSeconds, setTimerSeconds] = useState("00");
 
-		//the first date will be the date of the tour. The second todays' date
-		const timeDifference = +new Date(`10/10/${year}`) - +new Date();
+	let interval = useRef();
 
-		let timeLeft = {};
+	const startTimer = () => {
+		const countdownDate = new Date("Dec 1, 2021 00:00:00").getTime();
 
-		//check if the time left before the tour is greater than 0
+		interval = setInterval(() => {
+			const timeNow = new Date().getTime();
+			const timeDifference = countdownDate - timeNow; //gets the time difference between now and the countdown date
 
-		if (timeDifference > 0) {
-			timeLeft = {
-				days: Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
-				hours: Math.floor((timeDifference / (1000 * 60 * 60)) % 24),
-				minutes: Math.floor((timeDifference / 1000 / 60) % 60),
-				seconds: Math.floor((timeDifference / 1000) % 60),
-			};
-		}
-		//return timeLeft for use in the component
-		return timeLeft;
-	};
-	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-	const [year] = useState(new Date().getFullYear());
-	const [month] = useState(new Date().getMonth());
-	const [day] = useState(new Date().getDay());
+			const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+			const hours = Math.floor(
+				(timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+			);
+			const minutes = Math.floor(
+				(timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+			);
+			const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setTimeLeft(calculateTimeLeft());
+			if (timeDifference < 0) {
+				//stop timer
+				clearInterval(interval.current);
+			} else {
+				//update time
+				setTimerDays(days);
+				setTimerHours(hours);
+				setTimerMinutes(minutes);
+				setTimerSeconds(seconds);
+			}
 		}, 1000);
+	};
+	//componentdidmount
+	useEffect(() => {
+		startTimer();
+		return () => {
+			clearInterval(interval.current);
+		};
 	});
 
-	const timerComponents = [];
-
-	Object.keys(timeLeft).forEach((interval) => {
-		if (!timeLeft[interval]) {
-			return;
-		}
-
-		timerComponents.push(
-			<span>
-				{timeLeft[interval]} {interval}{" "}
-			</span>
-		);
-	});
 	return (
-		<div>
-			<h2>Your Tour Countdown to 10/10/2022</h2>
-			{timerComponents.length ? timerComponents : <span>Time to Tour!</span>}
-		</div>
+		<>
+			<div>
+				<section>
+					<p>{timerDays}</p>
+					<p>Days</p>
+				</section>
+				<section>
+					<p>{timerHours}</p>
+					<p>Hours</p>
+				</section>
+				<section>
+					<p>{timerMinutes}</p>
+					<p>Minutes</p>
+				</section>
+				<section>
+					<p>{timerSeconds}</p>
+					<p>Seconds</p>
+				</section>
+			</div>
+		</>
 	);
 };
 
