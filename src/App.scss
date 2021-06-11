@@ -1,3 +1,26 @@
+/*colour palette*/
+$green: #004f42;
+$purple: #754d78;
+$white: #f7f8f7;
+
+@mixin breakpoint($point) {
+	@if $point == mobileview {
+		@media (max-width: 639px) {
+			@content;
+		}
+	}
+	@if $point == tabletview {
+		@media (min-width: 640px) and (max-width: 900px) {
+			@content;
+		}
+	}
+	@if $point == desktopview {
+		@media (min-width: 901px) {
+			@content;
+		}
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -10,14 +33,14 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+	background: $white;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	color: white;
+	color: $green;
 }
 
 .location {
 	height: 30vh;
-	width: 50%;
+	width: 75%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -25,7 +48,7 @@ body {
 
 .temperature {
 	height: 30vh;
-	width: 50%;
+	width: 75%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
