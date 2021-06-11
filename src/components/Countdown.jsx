@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
 const Countdown = () => {
 	const [timerDays, setTimerDays] = useState("00");
@@ -46,23 +48,28 @@ const Countdown = () => {
 
 	return (
 		<>
-			<div>
-				<section>
+			<div className="countdownContainer">
+				<FontAwesomeIcon icon={faStopwatch} size="2x" />
+
+				<div>
 					<p>{timerDays}</p>
 					<p>Days</p>
-				</section>
-				<section>
+				</div>
+				<div>
 					<p>{timerHours}</p>
 					<p>Hours</p>
-				</section>
-				<section>
+				</div>
+				<div>
 					<p>{timerMinutes}</p>
 					<p>Minutes</p>
-				</section>
-				<section>
+				</div>
+				<div>
 					<p>{timerSeconds}</p>
 					<p>Seconds</p>
-				</section>
+				</div>
+				<div>
+					<p>Until your tour departs!</p>
+				</div>
 			</div>
 		</>
 	);

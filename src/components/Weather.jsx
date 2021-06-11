@@ -14,9 +14,9 @@ const Weather = () => {
 		setLatitude(position.coords.latitude);
 		setLongitude(position.coords.longitude);
 	};
-	const showError = (error) => {
-		<p>Unfortunately we can't display the weather at this time.</p>;
-	};
+	// const showError = (error) => {
+	// 	<p>Unfortunately we can't display the weather at this time.</p>;
+	// };
 	const getLocation = async () => {
 		await window.navigator.geolocation.getCurrentPosition(
 			savePositionToState
