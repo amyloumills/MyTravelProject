@@ -1,6 +1,12 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faPhone,
+	faAt,
+	faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
 	return (
@@ -12,11 +18,19 @@ const Contact = () => {
 				If you have any questions that aren't covered here, then don't hesitate
 				to get in touch
 			</p>
+
 			<div className="contactContainer">
-				Tel: 0131 226 6066 (0730-1900 daily)
+				<FontAwesomeIcon icon={faPhone} />
+				0131 226 6066 (0730-1900 daily)
 			</div>
-			<div className="contactContainer">Email: tours@timberbushtours.com</div>
-			<div className="contactContainer">555 Castlehill, Edinburgh, EH1 2ND</div>
+			<div className="contactContainer">
+				<FontAwesomeIcon icon={faAt} />
+				tours@timberbushtours.com
+			</div>
+			<div className="contactContainer">
+				<FontAwesomeIcon icon={faMapMarkerAlt} />
+				555 Castlehill, Edinburgh, EH1 2ND
+			</div>
 			<p>Alternatively send us a message using the form below!</p>
 			<ContactForm />
 			<SocialMedia />
