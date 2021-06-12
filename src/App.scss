@@ -2,6 +2,11 @@
 $green: #004f42;
 $purple: #754d78;
 $white: #f7f8f7;
+$grey: #b0bdb0;
+
+/*fonts*/
+/*Use Cinzel for Headings and Raleway for body text*/
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
 
 @mixin breakpoint($point) {
 	@if $point == mobileview {
@@ -28,14 +33,16 @@ $white: #f7f8f7;
 }
 
 body {
-	height: 100vh;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	background: $white;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: "Raleway", sans-serif;
 	color: $green;
+	line-height: 40px;
+	font-weight: 400;
+	text-align: left;
 }
 
 .location {
@@ -100,4 +107,42 @@ a {
 	&.instagram {
 		color: black;
 	}
+}
+button {
+	background-color: $green;
+	border-radius: 25px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: $grey;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.contactContainer {
+	&:nth-of-type(1n + 0) {
+		background-color: $green;
+		color: $white;
+	}
+	&:nth-of-type(2n + 0) {
+		background-color: $purple;
+		color: $white;
+	}
+	&:nth-of-type(3n + 0) {
+		background-color: $grey;
+		color: $white;
+	}
+	width: 40vw;
+	height: auto;
+	border-radius: 7px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	font-weight: 300;
+	font-size: 25px;
+	margin-top: 10px;
+	justify-content: center;
 }

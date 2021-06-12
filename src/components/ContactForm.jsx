@@ -3,12 +3,13 @@ import React from "react";
 const ContactForm = () => {
 	return (
 		<>
+			<p>Name</p>
 			<input type="text" />
-			Name
+			<p>Email</p>
 			<input type="text" />
-			Email
+			<p>Tel</p>
 			<input type="text" />
-			Tel
+			<p>What's up?</p>
 			<input type="textbox" />
 		</>
 	);
