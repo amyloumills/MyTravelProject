@@ -21,15 +21,15 @@ const Contact = () => {
 
 			<div className="contactContainer">
 				<FontAwesomeIcon icon={faPhone} />
-				0131 226 6066 (0730-1900 daily)
+				<p>0131 226 6066 (0730-1900 daily)</p>
 			</div>
 			<div className="contactContainer">
 				<FontAwesomeIcon icon={faAt} />
-				tours@timberbushtours.com
+				<p>tours@timberbushtours.com</p>
 			</div>
 			<div className="contactContainer">
 				<FontAwesomeIcon icon={faMapMarkerAlt} />
-				555 Castlehill, Edinburgh, EH1 2ND
+				<p>555 Castlehill, Edinburgh, EH1 2ND</p>
 			</div>
 			<p>Alternatively send us a message using the form below!</p>
 			<ContactForm />

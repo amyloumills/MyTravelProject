@@ -1,8 +1,13 @@
 import React from "react";
-import SocialMedia from "./SocialMedia";
+import { ReactComponent as Logo } from "./logo-horizontal.svg";
 
 const Footer = () => {
-	return <></>;
+	return (
+		<div className="footerContainer">
+			{/*Logo here is imported as a React component*/}
+			<Logo className="logoHorizontal" />
+		</div>
+	);
 };
 
 export default Footer;

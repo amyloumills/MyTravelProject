@@ -14,6 +14,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
 	const [page, setPage] = useState(0);
+
 	return (
 		<>
 			{page === 1 && <SignIn />}
@@ -21,24 +22,14 @@ const App = () => {
 			{page === 3 && <Dashboard />}
 			{page === 4 && <Countdown />}
 			{page === 5 && <Contact />}
-			<BrowserRouter>
-				<Header />
-				<section>
-					<Switch>
-						<Route exact path="/contact" component={Contact} />
-						<Route exact path="/weather" component={Weather} />
-						<Route exact path="/error404" component={Error404} />
-						<Route exact path="/dashboard" component={Dashboard} />
-						<Route exact path="/yourtour" component={YourTour} />
-					</Switch>
-				</section>
-			</BrowserRouter>
+			<div className="Menu">
+				<div onClick={() => setPage(1)}>Sign In</div>
+				<div onClick={() => setPage(2)}>Weather</div>
+				<div onClick={() => setPage(3)}>Dashboard</div>
+				<div onClick={() => setPage(4)}>Countdown</div>
+				<div onClick={() => setPage(5)}>Contact</div>
+			</div>
 			<Footer />
-			<div onClick={() => setPage(1)}>Sign In</div>
-			<div onClick={() => setPage(2)}>Weather</div>
-			<div onClick={() => setPage(3)}>Dashboard</div>
-			<div onClick={() => setPage(4)}>Countdown</div>
-			<div onClick={() => setPage(5)}>Contact</div>
 		</>
 	);
 };

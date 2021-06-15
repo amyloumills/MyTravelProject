@@ -53,9 +53,10 @@ const Weather = () => {
 
 	return (
 		<>
+			<h1>The Weather</h1>
 			<div className="container">
 				<div className="cards">
-					<h1>{cityName}</h1>
+					<h2>{cityName}</h2>
 					<h2>{temperature}ºC</h2>
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>
