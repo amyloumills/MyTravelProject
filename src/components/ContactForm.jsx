@@ -1,44 +1,63 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMale } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
 	return (
 		<>
-			<div class="contact-us">
-				<form action="#">
-					<label for="customerName">
-						Name <em>*</em>
-					</label>
-					<input
-						id="customerName"
-						name="customerName"
-						required=""
-						type="text"
-					/>
-					<label for="customerEmail">
-						Email <em>*</em>
-					</label>
-					<input
-						id="customerEmail"
-						name="customerEmail"
-						required=""
-						type="email"
-					/>
-					<label for="customerPhone">Phone</label>
-					<input id="customerPhone" name="customerPhone" type="tel" />
-					<label for="bookingRef">Booking Ref</label>
-					<input id="bookingRef" name="bookingRef" type="text" />
-					<label for="customerNote">
-						Your Message <em>*</em>
-					</label>
+			<form>
+				<h1>Get in touch!</h1>
+				<div className="formGroup">
+					<p>
+						First Name<span>*</span>
+					</p>
+					<span className="icon">
+						<FontAwesomeIcon className="faMale" icon={faMale} />
+					</span>
+					<input type="text" name="firstName" />
+				</div>
+
+				<div className="formGroup">
+					<p>
+						Last Name<span>*</span>
+					</p>
+					<span className="icon">
+						<FontAwesomeIcon className="faMale" icon={faMale} />
+					</span>
+					<input type="text" name="lastName" />
+				</div>
+				<div className="formGroup">
+					<p>Phone</p>
+					<span className="icon">
+						<FontAwesomeIcon className="faMale" icon={faMale} />
+					</span>
+					<input type="tel" name="tel" />
+				</div>
+				<div className="formGroup">
+					<p>Email</p>
+					<span className="icon">
+						<FontAwesomeIcon className="faMale" icon={faMale} />
+					</span>
+					<input type="email" name="email" />
+				</div>
+				<div className="formGroup">
+					<p>Your Message</p>
+					<span className="icon">
+						<FontAwesomeIcon className="faMale" icon={faMale} />
+					</span>
 					<textarea
-						id="customerNote"
-						name="customerNote"
+						id="customerMessage"
+						name="customerMessage"
 						required=""
-						rows="4"
+						rows="3"
 					></textarea>
-					<button>Submit</button>
-				</form>
-			</div>
+				</div>
+				<div>
+					<button type="submit" class="buttonContact">
+						Send
+					</button>
+				</div>
+			</form>
 		</>
 	);
 };

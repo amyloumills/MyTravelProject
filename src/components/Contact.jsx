@@ -1,6 +1,7 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 import SocialMedia from "./SocialMedia";
+import SocialFeedFB from "./SocialFeedFB";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faPhone,
@@ -34,6 +35,7 @@ const Contact = () => {
 			<p>Alternatively send us a message using the form below!</p>
 			<ContactForm />
 			<SocialMedia />
+			<SocialFeedFB />
 		</>
 	);
 };

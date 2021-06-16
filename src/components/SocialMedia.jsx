@@ -7,8 +7,10 @@ import {
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+
 const SocialMedia = () => {
 	return (
+
 		<div className="socialContainer">
 			<h4>Follow Us:</h4>
 			<a
@@ -36,6 +38,7 @@ const SocialMedia = () => {
 				<FontAwesomeIcon icon={faInstagram} size="2x" />
 			</a>
 		</div>
+		
 	);
 };
 
