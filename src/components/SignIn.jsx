@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SignIn = () => {
+const SignIn = (props) => {
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
 	const [bookingRef, setBookingRef] = useState("");
@@ -10,6 +10,7 @@ const SignIn = () => {
 	}
 	function onSubmit(e) {
 		e.preventDefault();
+		
 	}
 
 	return (
@@ -57,7 +58,7 @@ const SignIn = () => {
 					<input type="checkbox" />
 				</p>
 			</div>
-			<button type="submit" disabled={!userValidation()}>
+			<button onClick={() => props.setPage(3)} type="submit" disabled={!userValidation()}>
 				View My Booking
 			</button>
 		</>

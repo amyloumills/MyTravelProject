@@ -11,7 +11,7 @@ const NavBar = () => {
 
 	return (
 		<>
-			{page === 1 && <SignIn />}
+			{page === 1 && <SignIn setPage={setPage}/>}
 			{page === 2 && <Weather />}
 			{page === 3 && <Dashboard />}
 			{page === 4 && <Countdown />}
