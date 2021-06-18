@@ -1,19 +1,15 @@
 import React from "react";
-import "./App.scss";
+// import "./App.scss";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import { useState } from "react";
 
 const App = () => {
-	const [page] = useState(0);
-
-	{
-		page !== 1 && <NavBar />;
-	}
+	const [page, setPage] = useState(2);
 
 	return (
 		<>
-			<NavBar />
+			{page !== 1 && <NavBar />}
 			<Footer />
 		</>
 	);
