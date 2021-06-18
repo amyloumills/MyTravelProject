@@ -18,11 +18,11 @@ const NavBar = () => {
 			{page === 5 && <Contact />}
 
 			<div className="Menu">
-				<div onClick={() => setPage(1)}>Sign In</div>
-				<div onClick={() => setPage(2)}>Weather</div>
-				<div onClick={() => setPage(3)}>Dashboard</div>
-				<div onClick={() => setPage(4)}>Countdown</div>
-				<div onClick={() => setPage(5)}>Contact</div>
+				<div>{page === 0 && <div onClick={() => setPage(1)}>Sign In</div>}</div>
+				<div>{page > 1 && <div onClick={() => setPage(2)}>Weather</div>}</div>
+				<div>{page > 1 && <div onClick={() => setPage(3)}>Dashboard</div>}</div>
+				<div>{page > 1 && <div onClick={() => setPage(4)}>Countdown</div>}</div>
+				<div>{page > 1 && <div onClick={() => setPage(5)}>Contact</div>}</div>
 			</div>
 		</>
 	);
