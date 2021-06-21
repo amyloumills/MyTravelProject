@@ -2,15 +2,25 @@ import React, { useState } from "react";
 
 const SignIn = (props) => {
 	const [email, setEmail] = useState("");
-	const [name, setName] = useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
 	const [bookingRef, setBookingRef] = useState("");
+	// const [firstNameError, setFirstNameError] = useState({});
+	// const [lastNameError, setLastNameError] = useState({});
+	// const [emailError, setEmailError] = useState({});
+	// const [bookingRefError, setBookingRefError] = useState({});
 
 	function userValidation() {
-		return email.length > 0 && name.length > 0 && bookingRef.length > 0;
+		return (
+			email.length > 0 &&
+			firstName.length > 0 &&
+			lastName.length > 0 &&
+			bookingRef.length > 0
+		);
 	}
 	function onSubmit(e) {
 		e.preventDefault();
-		
+		// const isValid = userValidation();
 	}
 
 	return (
@@ -24,21 +34,24 @@ const SignIn = (props) => {
 				<p>First Name</p>
 				<input
 					onSubmit={onSubmit}
-					id="name"
+					id="firstName"
+					value={firstName}
 					type="text"
-					onChange={(e) => setName(e.target.value)}
+					onChange={(e) => setFirstName(e.target.value)}
 				/>
 				<p>Last Name</p>
 				<input
 					onSubmit={onSubmit}
-					id="name"
+					id="lastName"
+					value={lastName}
 					type="text"
-					onChange={(e) => setName(e.target.value)}
+					onChange={(e) => setLastName(e.target.value)}
 				/>
 				<p>Booking Reference</p>
 				<input
 					onSubmit={onSubmit}
 					id="bookingRef"
+					value={bookingRef}
 					type="text"
 					placeholder="TBT-"
 					onChange={(e) => setBookingRef(e.target.value)}
@@ -47,7 +60,7 @@ const SignIn = (props) => {
 				<input
 					onSubmit={onSubmit}
 					id="email"
-					type="text"
+					type="email"
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<p>
@@ -58,7 +71,11 @@ const SignIn = (props) => {
 					<input type="checkbox" />
 				</p>
 			</div>
-			<button onClick={() => props.setPage(3)} type="submit" disabled={!userValidation()}>
+			<button
+				onClick={() => props.setPage(2)}
+				type="submit"
+				disabled={!userValidation()}
+			>
 				View My Booking
 			</button>
 		</>

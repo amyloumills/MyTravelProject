@@ -1,14 +1,12 @@
 import React from "react";
-// import "./App.scss";
+import "./App.scss";
 import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-import { useState } from "react";
+import Header from "./components/Header";
 
 const App = () => {
-
 	return (
 		<>
-			<NavBar />
+			<Header />
 			<Footer />
 		</>
 	);

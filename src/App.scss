@@ -35,7 +35,6 @@ $grey: #b0bdb0;
 body {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
 	align-items: center;
 	background: $white;
 	font-family: "Raleway", sans-serif;
@@ -212,4 +211,45 @@ input {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-evenly;
+}
+//NAVBAR
+.menu {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	width: 100vw;
+	color: white;
+	background-color: $green;
+	overflow: hidden;
+}
+.menuItem {
+	display: flex;
+	flex-flow: row nowrap;
+	color: white;
+	font-size: 1.7rem;
+	font-weight: 500;
+	padding: 10px;
+	transition: transform 250ms;
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-2px);
+	}
+}
+//homepage
+.dashboardImage {
+	display: flex;
+	flex-flow: column;
+	max-width: 50vw;
+	justify-content: space-evenly;
+	@include breakpoint(desktopview) {
+		max-width: 25vw;
+	}
+	@include breakpoint(mobileview) {
+		max-width: 90vw;
+	}
+}
+.dashboardButton {
+	max-width: 20vw;
+	flex-flow: row nowrap;
+	justify-content: center;
 }
