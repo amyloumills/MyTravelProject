@@ -4,11 +4,11 @@ import axios from "axios";
 const Weather = () => {
 	const [latitude, setLatitude] = useState(0);
 	const [longitude, setLongitude] = useState(0);
-	const [weather, setWeather] = useState("");
-	const [temperature, setTemperature] = useState(0);
+	const [weather, setCurrentWeather] = useState("");
+	const [temperature, setCurrentTemperature] = useState(0);
 	const [cityName, setCityName] = useState("");
-	const [feelsLike, setFeelsLike] = useState(0);
-	const [iconCode, setIconCode] = useState("");
+	const [feelsLike, setCurrentFeelsLike] = useState(0);
+	const [iconCode, setCurrentIconCode] = useState("");
 
 	const savePositionToState = (position) => {
 		setLatitude(position.coords.latitude);
@@ -25,13 +25,13 @@ const Weather = () => {
 	const getWeather = async () => {
 		try {
 			const res = await axios.get(
-				`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=a2e9f900ab03f983ca54c821ab03cb37&units=metric`
+				`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely,alerts&units=metric&appid=a2e9f900ab03f983ca54c821ab03cb37`
 			);
-			setTemperature(Math.round(res.data.main.temp));
+			setCurrentTemperature(Math.round(res.data.current.temp));
 			setCityName(res.data.name);
-			setWeather(res.data.weather[0].main);
-			setFeelsLike(Math.round(res.data.main.feels_like));
-			setIconCode(res.data.weather[0].icon);
+			setCurrentWeather(res.data.current.weather[0]);
+			setCurrentFeelsLike(Math.round(res.data.current.feels_like));
+			setCurrentIconCode(res.data.current.weather[0].icon);
 		} catch (err) {
 			console.error(err);
 		}
