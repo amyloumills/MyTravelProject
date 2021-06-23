@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { FacebookProvider, Page, EmbeddedPost } from "react-facebook";
+import React from "react";
+import InstagramFeed from "react-ig-feed";
+import "react-ig-feed/dist/index.css";
 
 const SocialFeedFB = () => {
 	return (
-		<FacebookProvider appId="855434338435342">
-			<Page href="https://www.facebook.com" tabs="timeline" />
-			<EmbeddedPost href="http://www.facebook.com" width="500" />
-		</FacebookProvider>
-	); //WAITING FOR APPROVAL FROM FB
+		<InstagramFeed
+			token="IGQVJXR25tYllkTkFFRXg1MDJCQk1IRlZAmU0otcnJySk4waTBTYy1pLXRmUC1pUDRuOTFjVXdWZAW04ejMxdnc2R0pqQzBJUmpjblJyNmdqaG9TbEVvYmExeGRRT1pjTFM1Skt3Mlg1dC12QjNEcElOawZDZD"
+			counter="6"
+		/>
+	);
 };
 
 export default SocialFeedFB;
