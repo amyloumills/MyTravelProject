@@ -37,12 +37,12 @@ const Forecast = () => {
 			setFeelsLike(Math.round(response.data.current.feels_like));
 			setIconCode(response.data.current.weather[0].icon);
 
-			setDaily(response.data.daily);
+			setDaily(response.data.daily); //this sets the forecast
 		} catch (err) {
 			console.error(err);
 		}
 	};
-
+	//defensive checks
 	useEffect(() => {
 		if (longitude && latitude) getWeather();
 	}, [latitude, longitude]);
@@ -50,6 +50,7 @@ const Forecast = () => {
 	if (!temperature || !weather) {
 		return <div className="container">Weather loading...</div>;
 	}
+
 	const days = [
 		"Sunday",
 		"Monday",
@@ -78,7 +79,7 @@ const Forecast = () => {
 					{daily.map((day, index) => {
 						if (index == 0) return;
 
-						const dateObject = new Date(day.dt * 1000);
+						const dateObject = new Date(day.dt * 1000); // unix time to readable date
 						return (
 							<p>
 								THE DAY IS {days[dateObject.getDay()]} THE TEMP IS{" "}
