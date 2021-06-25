@@ -3,7 +3,7 @@ import Weather from "./Weather";
 import Homepage from "./Homepage";
 import SignIn from "./SignIn";
 import Contact from "./Contact";
-import Countdown from "./Countdown";
+import YourTour from "./YourTour";
 import { useState } from "react";
 
 const NavBar = () => {
@@ -22,7 +22,7 @@ const NavBar = () => {
 					{page > 1 && <div onClick={() => setPage(3)}>Weather</div>}
 				</div>
 				<div className="menuItem">
-					{page > 1 && <div onClick={() => setPage(4)}>Countdown</div>}
+					{page > 1 && <div onClick={() => setPage(4)}>Your Tour</div>}
 				</div>
 				<div className="menuItem">
 					{page > 1 && <div onClick={() => setPage(5)}>Contact</div>}
@@ -31,7 +31,7 @@ const NavBar = () => {
 			{page === 1 && <SignIn setPage={setPage} />}
 			{page === 2 && <Homepage />}
 			{page === 3 && <Weather />}
-			{page === 4 && <Countdown />}
+			{page === 4 && <YourTour />}
 			{page === 5 && <Contact />}
 		</>
 	);

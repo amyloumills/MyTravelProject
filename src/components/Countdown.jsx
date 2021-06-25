@@ -47,19 +47,7 @@ const Countdown = () => {
 
 	return (
 		<>
-			<h1>Your tour</h1>
-			<p>
-				We're looking forward to welcoming you on board! Here's an overview of
-				what you've booked...
-			</p>
-			<h2>Tour Name</h2>
-			<p>The Ultimate Whisky Tour</p>
-			<h2>Tour Departure Date</h2>
-			<p>1st Jan 2022</p>
-			<h2>Your Driver-Guide</h2>
-			<p>Billy</p>
 			<h2>Countdown...</h2>
-
 			<FontAwesomeIcon className="stopWatch" icon={faStopwatch} size="2x" />
 			<div className="countdownContainer">
 				<div>
