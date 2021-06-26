@@ -77,7 +77,7 @@ const Forecast = () => {
 				</div>
 				<div>
 					{daily.map((day, index) => {
-						if (index == 0) return;
+						if (index === 0) return;
 
 						const dateObject = new Date(day.dt * 1000); // unix time to readable date
 						return (

@@ -206,12 +206,6 @@ input {
 	font-size: 18px;
 }
 
-//COUNTDOWN
-.countdownContainer {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-evenly;
-}
 //NAVBAR
 .menu {
 	display: flex;
@@ -263,4 +257,44 @@ input {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
+}
+//COUNTDOWN
+.countdownContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+.countdownItem {
+	color: #111;
+	font-size: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	line-height: 30px;
+	margin: 10px;
+	padding-top: 10px;
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+.countdownItem span {
+	color: #333;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.countdownHeader {
+	letter-spacing: 2px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.countdownSVG {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 150px;
 }
