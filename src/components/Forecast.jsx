@@ -75,16 +75,22 @@ const Forecast = () => {
 						alt="weather icon"
 					/>
 				</div>
-				<div>
+				<div className="forecastTiles">
 					{daily.map((day, index) => {
-						if (index === 0) return;
+						if (index === 0) return; //removing today's forecast in the tiles
 
 						const dateObject = new Date(day.dt * 1000); // unix time to readable date
 						return (
-							<p>
-								THE DAY IS {days[dateObject.getDay()]} THE TEMP IS{" "}
-								{Math.round(day.temp.max)}°C
-							</p>
+							<div className="forecastContainer">
+								<p>{days[dateObject.getDay()]}</p>
+								<p>{Math.round(day.temp.max)}°C</p>
+								<p className="feelsLikeForecast">
+									Feels Like {Math.round(day.feels_like.day)}°C
+								</p>
+								<img
+									src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
+								/>
+							</div>
 						);
 					})}
 				</div>
