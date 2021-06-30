@@ -1,11 +1,13 @@
 import React from "react";
 
 import Forecast from "./Forecast";
+import ReverseGeo from "./ReverseGeo";
 
 const Weather = () => {
 	return (
 		<>
-			<p>The weather where you are...</p>
+			<h1>The Weather</h1>
+			<ReverseGeo />
 			<Forecast />
 
 			<p>Here is the weather forecast for your departure location:</p>

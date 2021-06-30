@@ -36,7 +36,6 @@ const Forecast = () => {
 			setWeather(response.data.current.weather[0].main);
 			setFeelsLike(Math.round(response.data.current.feels_like));
 			setIconCode(response.data.current.weather[0].icon);
-
 			setDaily(response.data.daily); //this sets the forecast
 		} catch (err) {
 			console.error(err);
@@ -63,10 +62,8 @@ const Forecast = () => {
 
 	return (
 		<>
-			<h1>The Weather</h1>
 			<div className="container">
 				<div className="cards">
-					<h2>SETNAME</h2>
 					<h2>{temperature}ºC</h2>
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>
@@ -75,21 +72,23 @@ const Forecast = () => {
 						alt="weather icon"
 					/>
 				</div>
-				<div className="forecastTiles">
+				<div>
 					{daily.map((day, index) => {
-						if (index === 0) return; //removing today's forecast in the tiles
+						if (index === 0 || index >= 6) {
+							return;
+						} //removing today's forecast in the tiles
 
 						const dateObject = new Date(day.dt * 1000); // unix time to readable date
 						return (
 							<div className="forecastContainer">
-								<p>{days[dateObject.getDay()]}</p>
-								<p>{Math.round(day.temp.max)}°C</p>
-								<p className="feelsLikeForecast">
-									Feels Like {Math.round(day.feels_like.day)}°C
-								</p>
+								<p className="forecastItem">{days[dateObject.getDay()]}</p>
 								<img
 									src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
 								/>
+								<p className="forecastItem">{Math.round(day.temp.max)}°C</p>
+								<p className="feelsLikeForecast">
+									Feels Like {Math.round(day.feels_like.day)}°C
+								</p>
 							</div>
 						);
 					})}
