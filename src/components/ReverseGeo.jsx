@@ -37,7 +37,7 @@ const ReverseGeo = () => {
 	return (
 		<>
 			<div>
-				<h2>{cityName}</h2>
+				<h2 className="cityNameDiv">{cityName}</h2>
 			</div>
 		</>
 	);

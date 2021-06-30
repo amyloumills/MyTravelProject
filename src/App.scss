@@ -27,7 +27,6 @@ $grey: #b0bdb0;
 }
 
 * {
-	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
@@ -41,7 +40,7 @@ body {
 	color: $green;
 	line-height: 40px;
 	font-weight: 400;
-	text-align: left;
+	text-align: center;
 }
 
 .location {
@@ -230,22 +229,30 @@ input {
 	}
 }
 //homepage
-.dashboardImage {
+.dashboardContainer {
+	display: inline-flex;
+	flex-flow: column wrap;
+
+	padding: 10px;
+	border-radius: 5px;
+	justify-content: center;
+
+	align-content: space-between;
+}
+.dbImg {
+	width: 20vw;
+	height: auto;
 	display: flex;
-	flex-flow: column;
-	max-width: 50vw;
-	justify-content: space-evenly;
-	@include breakpoint(desktopview) {
-		max-width: 25vw;
-	}
-	@include breakpoint(mobileview) {
-		max-width: 90vw;
-	}
+	flex-flow: row wrap;
+	flex-grow: 1;
 }
 .dashboardButton {
+	display: flex;
+	flex-direction: row wrap;
 	max-width: 20vw;
-	flex-flow: row nowrap;
+	height: 30px;
 	justify-content: center;
+	align-items: center;
 }
 // YOUR TOUR PAGE
 
@@ -299,6 +306,11 @@ input {
 	height: 150px;
 }
 //WEATHER
+
+.cards {
+	text-align: center;
+}
+
 .forecastContainer {
 	display: inline-block;
 	position: relative;
@@ -317,7 +329,16 @@ input {
 	font-size: 30px;
 	font-weight: 400;
 	margin-top: 30px;
+	text-align: center;
 }
 .feelsLikeForecast {
 	font-size: 20px;
+	text-align: center;
+}
+.forecastImage {
+	display: flex;
+	margin: auto;
+}
+.cityNameDiv {
+	text-align: center;
 }

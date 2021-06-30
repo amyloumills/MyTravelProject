@@ -19,23 +19,24 @@ const Homepage = () => {
 				where you can amend your booking, purchase attraction tickets or view
 				our FAQs.
 			</p>
+			<div>
+				<div className="dashboardContainer">
+					<img className="dbImg" src={coachrear} alt="coach"></img>
+					<button className="dashboardButton">Contact Us</button>
+				</div>
+				<div className="dashboardContainer">
+					<img className="dbImg" src={cruise} alt="cruise"></img>
+					<button className="dashboardButton">Your Tour</button>
+				</div>
 
-			<div className="dashboardImage">
-				<img src={coachrear} alt="coach"></img>
-				<button className="dashboardButton">Contact Us</button>
-			</div>
-			<div className="dashboardImage">
-				<img src={cruise} alt="cruise"></img>
-				<button className="dashboardButton">Your Tour</button>
-			</div>
-
-			<div className="dashboardImage">
-				<img src={coachside} alt="coach"></img>
-				<button className="dashboardButton">Countdown</button>
-			</div>
-			<div className="dashboardImage">
-				<img src={sunset} alt="sunset"></img>
-				<button className="dashboardButton">Weather</button>
+				<div className="dashboardContainer">
+					<img className="dbImg" src={coachside} alt="coach"></img>
+					<button className="dashboardButton">Countdown</button>
+				</div>
+				<div className="dashboardContainer">
+					<img className="dbImg" src={sunset} alt="sunset"></img>
+					<button className="dashboardButton">Weather</button>
+				</div>
 			</div>
 		</>
 	);
