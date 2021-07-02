@@ -23,7 +23,7 @@ const Countdown = () => {
 			const minutes = Math.floor(
 				(timeDifference % (1000 * 60 * 60)) / (1000 * 60) //unix time to minutes
 			);
-			const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); //unix time to seconds
+			const seconds = (timeDifference % (1000 * 60)) / 1000; //unix time to seconds
 
 			if (timeDifference < 0) {
 				//stop timer
@@ -35,7 +35,7 @@ const Countdown = () => {
 				setTimerMinutes(minutes);
 				setTimerSeconds(seconds);
 			}
-		}, 1000);
+		}, 50);
 	};
 	//componentdidmount
 	useEffect(() => {
@@ -51,42 +51,37 @@ const Countdown = () => {
 	const minutesRadius = mapNumber(timerMinutes, 60, 0, 0, 360);
 	const secondsRadius = mapNumber(timerSeconds, 60, 0, 0, 360);
 
-	//if there are no seconds, return nothing
-	if (!timerSeconds) {
-		return 0;
-	}
-
 	return (
 		<>
 			<h2 className="countdownHeader">Countdown...</h2>
 			<FontAwesomeIcon className="stopWatch" icon={faStopwatch} size="2x" />
 
 			<div className="countdownContainer">
-				{timerDays && (
+				{timerDays >= 0 && (
 					<div className="countdownItem">
 						<SVGCircle radius={daysRadius} />
 						{timerDays}
 						<span>Days</span>
 					</div>
 				)}
-				{timerHours && (
+				{timerHours >= 0 && (
 					<div className="countdownItem">
 						<SVGCircle radius={hoursRadius} />
 						{timerHours}
 						<span>Hours</span>
 					</div>
 				)}
-				{timerMinutes && (
+				{timerMinutes >= 0 && (
 					<div className="countdownItem">
 						<SVGCircle radius={minutesRadius} />
 						{timerMinutes}
 						<span>Minutes</span>
 					</div>
 				)}
-				{timerSeconds && (
+				{timerSeconds >= 0 && (
 					<div className="countdownItem">
 						<SVGCircle radius={secondsRadius} />
-						{timerSeconds}
+						{Math.round(timerSeconds)}
 						<span>Seconds</span>
 					</div>
 				)}

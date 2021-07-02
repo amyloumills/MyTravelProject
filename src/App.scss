@@ -342,3 +342,45 @@ input {
 .cityNameDiv {
 	text-align: center;
 }
+//SIGN IN PAGE
+.signIn {
+	padding: 40px;
+	text-align: center;
+}
+.signIn input[type="text"],
+.signIn input[type="email"] {
+	border: none;
+	display: block;
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: black;
+	border-radius: 20px;
+	transition: 0.25s;
+	&:focus {
+		width: 280px;
+		border-color: #2ecc71;
+	}
+}
+.signInButton {
+	border: 0;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 20px;
+	transition: 0.25s;
+	cursor: pointer;
+	position: relative;
+}
+.signInProblem {
+	font-size: small;
+	text-decoration: none;
+	color: black;
+}

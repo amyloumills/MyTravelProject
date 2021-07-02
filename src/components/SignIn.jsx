@@ -63,21 +63,23 @@ const SignIn = (props) => {
 					type="email"
 					onChange={(e) => setEmail(e.target.value)}
 				/>
-				<p>
-					I agree to the{" "}
-					<a href="https://www.timberbush-tours.co.uk/terms-conditions">
-						Terms
-					</a>{" "}
-					<input type="checkbox" />
-				</p>
 			</div>
 			<button
+				className="signInButton"
 				onClick={() => props.setPage(2)}
 				type="submit"
 				disabled={!userValidation()}
 			>
 				View My Booking
 			</button>
+			<div>
+				<a
+					href="https://www.timberbush-tours.co.uk/contact-us"
+					className="signInProblem"
+				>
+					Problems Signing In?
+				</a>
+			</div>
 		</>
 	);
 };
