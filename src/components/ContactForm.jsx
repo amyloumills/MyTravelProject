@@ -1,6 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMale } from "@fortawesome/free-solid-svg-icons";
+import {
+	faMale,
+	faPhone,
+	faAt,
+	faComments,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
 	return (
@@ -29,21 +34,21 @@ const ContactForm = () => {
 				<div className="formGroup">
 					<p>Phone</p>
 					<span className="icon">
-						<FontAwesomeIcon className="faMale" icon={faMale} />
+						<FontAwesomeIcon className="faPhone" icon={faPhone} />
 					</span>
 					<input type="tel" name="tel" />
 				</div>
 				<div className="formGroup">
 					<p>Email</p>
 					<span className="icon">
-						<FontAwesomeIcon className="faMale" icon={faMale} />
+						<FontAwesomeIcon className="faAt" icon={faAt} />
 					</span>
 					<input type="email" name="email" />
 				</div>
 				<div className="formGroup">
 					<p>Your Message</p>
 					<span className="icon">
-						<FontAwesomeIcon className="faMale" icon={faMale} />
+						<FontAwesomeIcon className="faComments" icon={faComments} />
 					</span>
 					<textarea
 						id="customerMessage"

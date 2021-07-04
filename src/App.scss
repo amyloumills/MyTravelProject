@@ -184,19 +184,22 @@ form {
 		border: 1px solid $purple;
 	}
 }
-input {
+input,
+textarea {
 	border-radius: 0px 5px 5px 0px;
 	border: 1px solid #eee;
 	margin-bottom: 15px;
-	width: 75%;
+	width: 85%;
 	height: 40px;
-	padding: 0px 15px;
+	padding: 0;
+	margin: 0;
 }
 .icon {
-	width: 35px;
+	width: 50px;
 	float: left;
 	border-radius: 5px 0px 0px 5px;
-	background: #eeeeee;
+	background-color: $grey;
+	margin-left: 20px;
 	height: 42px;
 	position: relative;
 	text-align: center;
@@ -368,7 +371,7 @@ input {
 .noBurger {
 	display: none;
 }
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
 	.noBurger {
 		display: unset;
 	}
@@ -376,32 +379,39 @@ input {
 		display: none;
 	}
 }
+.noBurgerNav {
+	background-color: $green;
+	border: 1px solid $green;
+	border-radius: 0px 0px 10px 10px;
+	width: 75%;
+	margin: auto;
+}
+.noBurgerNav ul li {
+	display: inline;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 15px;
+	font-size: 1.8em;
+	width: 100%;
 
-// .navigation {
-// 	@include breakpoint(mobiletablet) {
-// 		display: none;
-// 	}
-// 	width: 100%;
-// 	height: 80px;
-// 	background-color: $green;
-// }
-// .navigation ul {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	float: right;
-// 	margin: 20px 0px;
-// 	padding: 0px 25px;
-// }
-// .hamburger,
-// .burger {
-// 	@include breakpoint(desktopview) {
-// 		display: none;
-// 	}
-// 	@include breakpoint(mobiletablet) {
-// 		display: flex;
-// 		padding-top: 10px;
-// 		margin-left: 10px;
-// 		z-index: 6;
-// 		height: auto;
-// 	}
-// }
+	color: white;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.burgerNav ul li {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	padding-top: 10px;
+	background-color: $grey;
+	text-decoration: none;
+	font-size: 1.8em;
+	line-height: 80px;
+	list-style-type: none;
+}
+
+.faBars {
+	display: block;
+	margin: 20px;
+}

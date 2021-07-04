@@ -3,7 +3,7 @@ import React from "react";
 export default function NoBurger({ page, setPage }) {
 	return (
 		<>
-			<div className="navigation">
+			<div className="noBurgerNav">
 				<ul>
 					{page === 0 && <li onClick={() => setPage(1)}>Sign In</li>}
 

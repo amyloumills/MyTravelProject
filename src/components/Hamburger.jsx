@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hamburger({ page, setPage }) {
 	const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -10,11 +12,15 @@ export default function Hamburger({ page, setPage }) {
 	return (
 		<>
 			<div className="hamburger" onClick={toggleHamburger}>
-				{/* <Hamburger isOpen={hamburgerOpen} /> */}
-				<button onClick={toggleHamburger}>BURGER</button>
+				<FontAwesomeIcon
+					icon={faBars}
+					className="faBars"
+					size="2x"
+					onClick={toggleHamburger}
+				/>
 			</div>
 			{hamburgerOpen && (
-				<div className="navigation">
+				<div className="burgerNav">
 					<ul>
 						{page === 0 && <li onClick={() => setPage(1)}>Sign In</li>}
 
