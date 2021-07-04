@@ -14,6 +14,11 @@ $grey: #b0bdb0;
 			@content;
 		}
 	}
+	@if $point == mobiletablet {
+		@media (max-width: 900px) {
+			@content;
+		}
+	}
 	@if $point == tabletview {
 		@media (min-width: 640px) and (max-width: 900px) {
 			@content;
@@ -154,6 +159,11 @@ button {
 	color: #ffffff;
 	text-align: center;
 	transition: all 0.2s;
+	@include breakpoint(mobileview) {
+		width: 95%;
+		font-size: 1.5em;
+		padding-top: 20px;
+	}
 }
 .logoHorizontal {
 	width: 30vw;
@@ -205,55 +215,8 @@ input {
 	font-size: 18px;
 }
 
-//NAVBAR
-.menu {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-evenly;
-	width: 100vw;
-	color: white;
-	background-color: $green;
-	overflow: hidden;
-}
-.menuItem {
-	display: flex;
-	flex-flow: row nowrap;
-	color: white;
-	font-size: 1.7rem;
-	font-weight: 500;
-	padding: 10px;
-	transition: transform 250ms;
-	&:hover {
-		cursor: pointer;
-		transform: translateY(-2px);
-	}
-}
 //homepage
-.dashboardContainer {
-	display: inline-flex;
-	flex-flow: column wrap;
 
-	padding: 10px;
-	border-radius: 5px;
-	justify-content: center;
-
-	align-content: space-between;
-}
-.dbImg {
-	width: 20vw;
-	height: auto;
-	display: flex;
-	flex-flow: row wrap;
-	flex-grow: 1;
-}
-.dashboardButton {
-	display: flex;
-	flex-direction: row wrap;
-	max-width: 20vw;
-	height: 30px;
-	justify-content: center;
-	align-items: center;
-}
 // YOUR TOUR PAGE
 
 .driverGuide {
@@ -309,6 +272,7 @@ input {
 
 .cards {
 	text-align: center;
+	color: $purple;
 }
 
 .forecastContainer {
@@ -324,16 +288,28 @@ input {
 	min-height: 350px;
 	box-shadow: 0 2px 30px rgba(black, 0.2);
 	background-color: lightgray;
+	@include breakpoint(mobileview) {
+		min-width: 100px;
+		min-height: 100px;
+	}
 }
 .forecastItem {
 	font-size: 30px;
 	font-weight: 400;
 	margin-top: 30px;
 	text-align: center;
+	@include breakpoint(mobileview) {
+		font-size: 1em;
+		font-weight: 500;
+		margin-top: 10px;
+	}
 }
 .feelsLikeForecast {
 	font-size: 20px;
 	text-align: center;
+	@include breakpoint(mobileview) {
+		font-size: 0.9em;
+	}
 }
 .forecastImage {
 	display: flex;
@@ -354,7 +330,7 @@ input {
 	background: none;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #3498db;
+	border: 2px solid $purple;
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
@@ -363,14 +339,14 @@ input {
 	transition: 0.25s;
 	&:focus {
 		width: 280px;
-		border-color: #2ecc71;
+		border-color: #3498db;
 	}
 }
 .signInButton {
 	border: 0;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #2ecc71;
+	border: 2px solid $purple;
 	padding: 14px 40px;
 	outline: none;
 	color: white;
@@ -383,4 +359,49 @@ input {
 	font-size: small;
 	text-decoration: none;
 	color: black;
+	&:hover {
+		font-weight: 700;
+	}
 }
+//NAVBAR
+
+.noBurger {
+	display: none;
+}
+@media (min-width: 1000px) {
+	.noBurger {
+		display: unset;
+	}
+	.hamburger {
+		display: none;
+	}
+}
+
+// .navigation {
+// 	@include breakpoint(mobiletablet) {
+// 		display: none;
+// 	}
+// 	width: 100%;
+// 	height: 80px;
+// 	background-color: $green;
+// }
+// .navigation ul {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	float: right;
+// 	margin: 20px 0px;
+// 	padding: 0px 25px;
+// }
+// .hamburger,
+// .burger {
+// 	@include breakpoint(desktopview) {
+// 		display: none;
+// 	}
+// 	@include breakpoint(mobiletablet) {
+// 		display: flex;
+// 		padding-top: 10px;
+// 		margin-left: 10px;
+// 		z-index: 6;
+// 		height: auto;
+// 	}
+// }

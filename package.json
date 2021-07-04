@@ -14,6 +14,7 @@
     "joi": "^17.4.0",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
+    "react-burger-menu": "^3.0.6",
     "react-dom": "^17.0.2",
     "react-ig-feed": "^1.0.4",
     "react-router-dom": "^5.2.0",

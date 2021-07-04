@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ReverseGeo from "./ReverseGeo";
 
 const Forecast = () => {
 	const apiKey = `a2e9f900ab03f983ca54c821ab03cb37`;
@@ -64,6 +65,7 @@ const Forecast = () => {
 		<>
 			<div className="container">
 				<div className="cards">
+					<ReverseGeo />
 					<h2>{temperature}ºC</h2>
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>

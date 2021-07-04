@@ -10,7 +10,7 @@ const Countdown = () => {
 	const [timerMinutes, setTimerMinutes] = useState("00");
 	const [timerSeconds, setTimerSeconds] = useState("00");
 
-	let interval = useRef();
+	var interval = useRef();
 
 	const startTimer = () => {
 		interval = setInterval(() => {

@@ -1,14 +1,14 @@
 import React from "react";
-import coachrear from "./images/coachRear.png";
-import coachside from "./images/coachSide.png";
-import sunset from "./images/sunset.png";
-import cruise from "./images/cruise.png";
+import Skye from "./images/SkyeCrop.png";
 
 const Homepage = () => {
 	return (
 		<>
 			<h1>Homepage</h1>
 			<h3>Failte gu Alba, NAME!</h3>
+			{/* <div className="dashboardImage">
+				<img src={Skye} alt="Isle of Skye" />
+			</div> */}
 			<p>
 				And a warm welcome to Scotland! We're looking forward to welcoming you
 				on tour! Here, you can find all your details about your tour, the
@@ -20,7 +20,7 @@ const Homepage = () => {
 				our FAQs.
 			</p>
 			<div>
-				<div className="dashboardContainer">
+				{/* <div className="dashboardContainer">
 					<img className="dbImg" src={coachrear} alt="coach"></img>
 					<button className="dashboardButton">Contact Us</button>
 				</div>
@@ -36,7 +36,7 @@ const Homepage = () => {
 				<div className="dashboardContainer">
 					<img className="dbImg" src={sunset} alt="sunset"></img>
 					<button className="dashboardButton">Weather</button>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);

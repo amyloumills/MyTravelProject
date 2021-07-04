@@ -5,28 +5,20 @@ import SignIn from "./SignIn";
 import Contact from "./Contact";
 import YourTour from "./YourTour";
 import { useState } from "react";
+import Hamburger from "./Hamburger";
+import NoBurger from "./NoBurger";
 
 const NavBar = () => {
 	const [page, setPage] = useState(0);
 
 	return (
 		<>
-			<div className="menu">
-				<div className="menuItem">
-					{page === 0 && <div onClick={() => setPage(1)}>Sign In</div>}
-				</div>
-				<div className="menuItem">
-					{page > 1 && <div onClick={() => setPage(2)}>Homepage</div>}
-				</div>
-				<div className="menuItem">
-					{page > 1 && <div onClick={() => setPage(3)}>Weather</div>}
-				</div>
-				<div className="menuItem">
-					{page > 1 && <div onClick={() => setPage(4)}>Your Tour</div>}
-				</div>
-				<div className="menuItem">
-					{page > 1 && <div onClick={() => setPage(5)}>Contact</div>}
-				</div>
+			<div className="hamburger">
+				<Hamburger page={page} setPage={setPage} />
+			</div>
+
+			<div className="noBurger">
+				<NoBurger page={page} setPage={setPage} />
 			</div>
 			{page === 1 && <SignIn setPage={setPage} />}
 			{page === 2 && <Homepage />}
