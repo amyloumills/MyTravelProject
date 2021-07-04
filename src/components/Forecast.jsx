@@ -72,6 +72,7 @@ const Forecast = () => {
 					<img
 						src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`}
 						alt="weather icon"
+						className="weatherIcon"
 					/>
 				</div>
 				<div>
