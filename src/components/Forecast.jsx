@@ -50,7 +50,6 @@ const Forecast = () => {
 
 	if (!temperature || !weather) {
 		return <RotateSpinner size={45} color="#686769" className="spinner" />;
-		// <div className="container">Weather loading...</div>;
 	}
 
 	const days = [

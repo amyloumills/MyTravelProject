@@ -20,6 +20,7 @@ const NavBar = () => {
 			<div className="noBurger">
 				<NoBurger page={page} setPage={setPage} />
 			</div>
+
 			{page === 1 && <SignIn setPage={setPage} />}
 			{page === 2 && <Homepage />}
 			{page === 3 && <Weather />}
