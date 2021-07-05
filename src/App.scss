@@ -341,7 +341,7 @@ textarea {
 	min-width: 200px;
 	min-height: 350px;
 	box-shadow: 0 2px 30px rgba(black, 0.2);
-	background-color: $purple;
+	background-color: $palePurple;
 	@include breakpoint(mobileview) {
 		min-width: 100px;
 		min-height: 100px;
