@@ -12,8 +12,12 @@ const Homepage = () => {
 			<div className="dashboardImage">
 				<img src={Skye} alt="Isle of Skye" />
 			</div>
-			<div className="dashboardImgMobile">
-				<img src={mobileSkyeView} alt="Coach on Skye" />
+			<div>
+				<img
+					className="dashboardImgMobile"
+					src={mobileSkyeView}
+					alt="Coach on Skye"
+				/>
 			</div>
 			<p>
 				And a warm welcome to Scotland! We're looking forward to welcoming you
