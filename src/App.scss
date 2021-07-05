@@ -30,6 +30,11 @@ $palePurple: #bdb0bd;
 			@content;
 		}
 	}
+	@if $point == largerdesktop {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
 }
 
 * {
@@ -49,38 +54,7 @@ body {
 	text-align: center;
 }
 
-.location {
-	height: 30vh;
-	width: 75%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.temperature {
-	height: 30vh;
-	width: 75%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-direction: column;
-}
-
-.degreeSection {
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-
-	span {
-		margin: 10px;
-		font-size: 30px;
-	}
-
-	h2 {
-		font-size: 40px;
-	}
-}
-
+//CONTACT US
 .socialContainer {
 	padding: 25px 50px;
 }
@@ -195,7 +169,7 @@ textarea {
 	padding: 0;
 	margin: 0;
 }
-.icon {
+.formIcon {
 	width: 50px;
 	float: left;
 	border-radius: 5px 0px 0px 5px;
@@ -267,7 +241,36 @@ textarea {
 	// height: 150px;
 }
 //WEATHER
+.location {
+	height: 30vh;
+	width: 75%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.temperature {
+	height: 30vh;
+	width: 75%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
 
+.degreeSection {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	span {
+		margin: 10px;
+		font-size: 30px;
+	}
+
+	h2 {
+		font-size: 40px;
+	}
+}
 .cards {
 	text-align: center;
 	color: $green;
@@ -434,10 +437,13 @@ textarea {
 	margin: 20px;
 }
 .transparentLogo {
-	display: flex;
-	width: 100px;
-	height: 100px;
-	flex-wrap: nowrap;
+	padding: 0;
+	height: 40px;
+	margin-left: 40px;
+	position: fixed;
+	@include breakpoint(largerdesktop) {
+		display: none;
+	}
 }
 //FOOTER
 .footerContainer {

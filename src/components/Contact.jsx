@@ -32,7 +32,6 @@ const Contact = () => {
 				<FontAwesomeIcon icon={faMapMarkerAlt} />
 				<p>555 Castlehill, Edinburgh, EH1 2ND</p>
 			</div>
-			<p>Alternatively send us a message using the form below!</p>
 			<ContactForm />
 			<SocialMedia />
 			<SocialFeedFB />

@@ -15,6 +15,15 @@ export default function NoBurger({ page, setPage }) {
 					{page > 1 && <li onClick={() => setPage(4)}>Your Tour</li>}
 
 					{page > 1 && <li onClick={() => setPage(5)}>Contact</li>}
+					<span>
+						{page > 1 && (
+							<img
+								src={transparentLogo}
+								className="transparentLogo"
+								alt="Logo"
+							/>
+						)}
+					</span>
 				</ul>
 			</div>
 		</>
