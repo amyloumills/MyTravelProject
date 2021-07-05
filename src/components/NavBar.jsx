@@ -9,7 +9,7 @@ import Hamburger from "./Hamburger";
 import NoBurger from "./NoBurger";
 
 const NavBar = () => {
-	const [page, setPage] = useState(0);
+	const [page, setPage] = useState(1);
 
 	return (
 		<>

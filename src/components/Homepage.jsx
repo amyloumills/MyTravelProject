@@ -3,6 +3,7 @@ import Skye from "./images/SkyeCrop.png";
 import mobileSkyeView from "./images/mobileSkyeView.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { RotateSpinner } from "react-spinners-kit";
 
 const Homepage = () => {
 	return (

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ReverseGeo from "./ReverseGeo";
+import { RotateSpinner } from "react-spinners-kit";
 
 const Forecast = () => {
 	const apiKey = `a2e9f900ab03f983ca54c821ab03cb37`;
@@ -48,7 +49,8 @@ const Forecast = () => {
 	}, [latitude, longitude]);
 
 	if (!temperature || !weather) {
-		return <div className="container">Weather loading...</div>;
+		return <RotateSpinner size={45} color="#686769" className="spinner" />;
+		// <div className="container">Weather loading...</div>;
 	}
 
 	const days = [

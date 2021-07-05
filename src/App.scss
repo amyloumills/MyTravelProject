@@ -407,7 +407,7 @@ textarea {
 	background-color: $green;
 	border: 1px solid $green;
 	border-radius: 0px 0px 10px 10px;
-	width: 75%;
+	width: 75vw;
 	margin: auto;
 }
 .noBurgerNav ul li {
@@ -438,4 +438,26 @@ textarea {
 .faBars {
 	display: block;
 	margin: 20px;
+}
+//FOOTER
+.footerContainer {
+	display: flex;
+	justify-content: center;
+
+	flex-flow: row;
+	padding: 10px;
+}
+.footerSpan {
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row nowrap;
+	margin: 10px;
+}
+.footerSpan h6 {
+	padding: 10px;
+}
+.spinner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
