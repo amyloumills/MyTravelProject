@@ -1,6 +1,12 @@
 import React from "react";
 import Countdown from "./Countdown";
 import Jim from "./images/Jim.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCalendarAlt,
+	faMapMarkerAlt,
+	faBus,
+} from "@fortawesome/free-solid-svg-icons";
 
 const YourTour = () => {
 	return (
@@ -11,16 +17,37 @@ const YourTour = () => {
 					We're looking forward to welcoming you on board! Here's an overview of
 					what you've booked...
 				</p>
+				<div className="yourTourContainer">
+					<div className="yourTourCard">
+						<h2>Departure Date</h2>
+						<FontAwesomeIcon
+							className="yourTourIcon"
+							icon={faCalendarAlt}
+							size="2x"
+						/>
+						<p>1st Jan 2022</p>
+					</div>
+					<div className="yourTourCard">
+						<h2>Tour Name</h2>
+						<FontAwesomeIcon className="yourTourIcon" icon={faBus} size="2x" />
+						<p>Loch Ness and The Highlands</p>
+					</div>
+					<div className="yourTourCard">
+						<h2>Departure City</h2>
+						<FontAwesomeIcon
+							className="yourTourIcon"
+							icon={faMapMarkerAlt}
+							size="2x"
+						/>
+						<p>Edinburgh</p>
+					</div>
+				</div>
+				<div className="driverGuide">
+					<h2>Your Driver-Guide</h2>
+					<p>Jim</p>
+					<img className="driverGuide" src={Jim} alt="Driver-Guide Jim" />
+				</div>
 
-				<h2>Tour Name</h2>
-				<p>The Ultimate Whisky Experience</p>
-				<h2>Departure City</h2>
-				<p>Edinburgh</p>
-				<h2>Tour Departure Date</h2>
-				<p>1st Jan 2022</p>
-				<h2>Your Driver-Guide</h2>
-				<p>Jim</p>
-				<img className="driverGuide" src={Jim} alt="Driver-Guide Jim" />
 				<Countdown />
 			</div>
 		</>

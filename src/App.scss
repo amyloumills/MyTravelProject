@@ -198,7 +198,48 @@ textarea {
 .driverGuide {
 	width: 30vw;
 }
+.yourTourContainer {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	margin: 10px;
+}
 
+.yourTourCard {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	border: 1px solid gray;
+	border-radius: 15px;
+	padding: 20px 20px 40px 20px;
+	height: 25%;
+	width: 25%;
+	text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+	box-shadow: 0 2px 30px rgba(black, 0.2);
+
+	@include breakpoint(mobiletablet) {
+		display: flex;
+		flex-flow: column nowrap;
+		height: 80%;
+		width: 80%;
+		margin-bottom: 10px;
+		h3 {
+			font-size: 1.5em;
+		}
+		button {
+			width: 50%;
+			height: 50px;
+			font-size: 1.1em;
+		}
+	}
+}
+.yourTourIcon {
+	margin: auto;
+}
+.driverGuide {
+	padding-top: 50px;
+	margin: auto;
+}
 //COUNTDOWN
 .countdownContainer {
 	display: flex;
@@ -300,7 +341,7 @@ textarea {
 	min-width: 200px;
 	min-height: 350px;
 	box-shadow: 0 2px 30px rgba(black, 0.2);
-	background-color: lightgray;
+	background-color: $purple;
 	@include breakpoint(mobileview) {
 		min-width: 100px;
 		min-height: 100px;
@@ -440,7 +481,7 @@ textarea {
 	padding: 0;
 	height: 40px;
 	margin-left: 40px;
-	position: fixed;
+	position: absolute;
 	@include breakpoint(largerdesktop) {
 		display: none;
 	}
@@ -509,7 +550,7 @@ textarea {
 	justify-content: center;
 	border: 1px solid gray;
 	border-radius: 15px;
-	padding: 20px;
+	padding: 20px 20px 40px 20px;
 	height: 35%;
 	width: 35%;
 	text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
