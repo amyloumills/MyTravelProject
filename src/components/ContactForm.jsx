@@ -11,11 +11,11 @@ const ContactForm = () => {
 	return (
 		<>
 			<form>
-				<h1>Send us a Message</h1>
+				<h2>Send us a Message</h2>
 				<div className="formGroup">
-					<p>
+					<label for="firstName">
 						First Name<span>*</span>
-					</p>
+					</label>
 					<span className="formIcon">
 						<FontAwesomeIcon className="faMale" icon={faMale} />
 					</span>
@@ -23,30 +23,30 @@ const ContactForm = () => {
 				</div>
 
 				<div className="formGroup">
-					<p>
+					<label for="lastName">
 						Last Name<span>*</span>
-					</p>
+					</label>
 					<span className="formIcon">
 						<FontAwesomeIcon className="faMale" icon={faMale} />
 					</span>
 					<input type="text" name="lastName" />
 				</div>
 				<div className="formGroup">
-					<p>Phone</p>
+					<label for="phone">Phone</label>
 					<span className="formIcon">
 						<FontAwesomeIcon className="faPhone" icon={faPhone} />
 					</span>
 					<input type="tel" name="tel" />
 				</div>
 				<div className="formGroup">
-					<p>Email</p>
+					<label for="email">Email</label>
 					<span className="formIcon">
 						<FontAwesomeIcon className="faAt" icon={faAt} />
 					</span>
 					<input type="email" name="email" />
 				</div>
 				<div className="formGroup">
-					<p>Your Message</p>
+					<label for="message">Your Message</label>
 					<span className="formIcon">
 						<FontAwesomeIcon className="faComments" icon={faComments} />
 					</span>

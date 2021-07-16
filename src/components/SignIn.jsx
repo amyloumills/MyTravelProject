@@ -74,8 +74,10 @@ const SignIn = (props) => {
 			</button>
 			<div>
 				<a
-					href="https://www.timberbush-tours.co.uk/contact-us"
 					className="signInProblem"
+					onClick={() => {
+						props.setPage(0);
+					}}
 				>
 					Problems Signing In?
 				</a>

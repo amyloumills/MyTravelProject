@@ -7,6 +7,7 @@ import YourTour from "./YourTour";
 import { useState } from "react";
 import Hamburger from "./Hamburger";
 import NoBurger from "./NoBurger";
+import ProblemSigningIn from "./ProblemSigningIn";
 
 const NavBar = () => {
 	const [page, setPage] = useState(1);
@@ -20,7 +21,7 @@ const NavBar = () => {
 			<div className="noBurger">
 				<NoBurger page={page} setPage={setPage} />
 			</div>
-
+			{page === 0 && <ProblemSigningIn setPage={setPage} />}
 			{page === 1 && <SignIn setPage={setPage} />}
 			{page === 2 && <Homepage />}
 			{page === 3 && <Weather />}
