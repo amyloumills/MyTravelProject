@@ -86,6 +86,7 @@ a {
 		color: black;
 	}
 }
+
 button {
 	display: inline-block;
 	padding: 0.3em 1.2em;
@@ -192,7 +193,10 @@ textarea {
 	margin-top: 40px;
 	font-size: 18px;
 }
-
+.contactInput {
+	display: flex;
+	flex-flow: row nowrap;
+}
 // YOUR TOUR PAGE
 
 .driverGuide {

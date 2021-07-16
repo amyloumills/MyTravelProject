@@ -16,46 +16,55 @@ const ContactForm = () => {
 					<label for="firstName">
 						First Name<span>*</span>
 					</label>
-					<span className="formIcon">
-						<FontAwesomeIcon className="faMale" icon={faMale} />
-					</span>
-					<input type="text" name="firstName" />
+					<div className="contactInput">
+						<span className="formIcon">
+							<FontAwesomeIcon className="faMale" icon={faMale} />
+						</span>
+						<input type="text" name="firstName" />
+					</div>
 				</div>
-
 				<div className="formGroup">
 					<label for="lastName">
 						Last Name<span>*</span>
 					</label>
-					<span className="formIcon">
-						<FontAwesomeIcon className="faMale" icon={faMale} />
-					</span>
-					<input type="text" name="lastName" />
+					<div className="contactInput">
+						<span className="formIcon">
+							<FontAwesomeIcon className="faMale" icon={faMale} />
+						</span>
+						<input type="text" name="lastName" />
+					</div>
 				</div>
 				<div className="formGroup">
 					<label for="phone">Phone</label>
-					<span className="formIcon">
-						<FontAwesomeIcon className="faPhone" icon={faPhone} />
-					</span>
-					<input type="tel" name="tel" />
+					<div className="contactInput">
+						<span className="formIcon">
+							<FontAwesomeIcon className="faPhone" icon={faPhone} />
+						</span>
+						<input type="tel" name="tel" />
+					</div>
 				</div>
 				<div className="formGroup">
 					<label for="email">Email</label>
-					<span className="formIcon">
-						<FontAwesomeIcon className="faAt" icon={faAt} />
-					</span>
-					<input type="email" name="email" />
+					<div className="contactInput">
+						<span className="formIcon">
+							<FontAwesomeIcon className="faAt" icon={faAt} />
+						</span>
+						<input type="email" name="email" />
+					</div>
 				</div>
 				<div className="formGroup">
 					<label for="message">Your Message</label>
-					<span className="formIcon">
-						<FontAwesomeIcon className="faComments" icon={faComments} />
-					</span>
-					<textarea
-						id="customerMessage"
-						name="customerMessage"
-						required=""
-						rows="3"
-					></textarea>
+					<div className="contactInput">
+						<span className="formIcon">
+							<FontAwesomeIcon className="faComments" icon={faComments} />
+						</span>
+						<textarea
+							id="customerMessage"
+							name="customerMessage"
+							required=""
+							rows="3"
+						></textarea>
+					</div>
 				</div>
 				<div>
 					<button type="submit" className="buttonContact">
