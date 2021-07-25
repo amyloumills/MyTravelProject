@@ -52,7 +52,7 @@ const Homepage = () => {
 
 				<div className="homepageCard">
 					<span className="translations">
-						<h3>Departure Point</h3>
+						<h3>Departures</h3>
 						<FontAwesomeIcon
 							className="translations"
 							icon={faMapMarkerAlt}
@@ -64,7 +64,7 @@ const Homepage = () => {
 						Find your Departure Point here:
 					</p>
 					<div>
-						<button>Departure Point</button>
+						<button>Departures</button>
 					</div>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ export default function Hamburger({ page, setPage }) {
 			</div>
 			{hamburgerOpen && (
 				<div className="burgerNav">
-					<ul>
+					<ul className="navLinks">
 						{page === 0 && (
 							<li
 								onClick={() => {

@@ -282,8 +282,6 @@ textarea {
 	position: absolute;
 	top: 0;
 	left: 0;
-	// width: 150px;
-	// height: 150px;
 }
 //WEATHER
 .location {
@@ -419,6 +417,7 @@ textarea {
 	color: black;
 	&:hover {
 		font-weight: 700;
+		cursor: pointer;
 	}
 }
 //NAVBAR
@@ -464,6 +463,7 @@ textarea {
 	padding: 10px;
 	background-color: $grey;
 }
+
 .burgerNav ul li {
 	display: block;
 	position: relative;

@@ -95,9 +95,15 @@ const Countdown = () => {
 //code for displaying the SVG
 const SVGCircle = ({ radius }) => (
 	<svg className="countdownSVG">
+		<defs>
+			<linearGradient id="myGradient" gradientTransform="rotate(90)">
+				<stop offset="5%" stop-color="#bdb0bd" />
+				<stop offset="95%" stop-color="#754d78" />
+			</linearGradient>
+		</defs>
 		<path
 			fill="none"
-			stroke="green"
+			stroke="url('#myGradient')"
 			strokeWidth="4"
 			d={describeArc(50, 50, 48, 0, radius)}
 		/>

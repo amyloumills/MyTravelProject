@@ -1,14 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const SignIn = (props) => {
 	const [email, setEmail] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [bookingRef, setBookingRef] = useState("");
-	// const [firstNameError, setFirstNameError] = useState({});
-	// const [lastNameError, setLastNameError] = useState({});
-	// const [emailError, setEmailError] = useState({});
-	// const [bookingRefError, setBookingRefError] = useState({});
 
 	function userValidation() {
 		return (
@@ -18,8 +15,29 @@ const SignIn = (props) => {
 			bookingRef.length > 0
 		);
 	}
+	const signInAPI = async () => {
+		try {
+			const response = await axios
+				.post({
+					url: `http://localhost:5002/login`,
+					data: {
+						first_name: { firstName },
+						last_name: { lastName },
+						email: { email },
+						booking_ref: { bookingRef },
+					},
+				})
+				.then((result) => {
+					console.log(result);
+					//if valid, then move on to uservalidation
+				});
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	function onSubmit(e) {
 		e.preventDefault();
+		signInAPI();
 		// const isValid = userValidation();
 	}
 
@@ -75,6 +93,7 @@ const SignIn = (props) => {
 			<div>
 				<a
 					className="signInProblem"
+					onSubmit={onSubmit}
 					onClick={() => {
 						props.setPage(0);
 					}}
