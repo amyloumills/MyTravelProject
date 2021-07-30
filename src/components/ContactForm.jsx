@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faMale,
@@ -6,11 +6,55 @@ import {
 	faAt,
 	faComments,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const ContactForm = () => {
+	//collect data from the form
+	const [submitted, setSubmitted] = useState(false);
+	const [data, setData] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		tel: "",
+		customerMessage: "",
+	});
+
+	const handleChange = (e) => {
+		console.log(e.target.name, e.target.value);
+		const { name, value } = e.target;
+		setData({
+			...data,
+			[name]: value,
+		});
+	};
+
+	const resetForm = () => {
+		setData({
+			firstName: "",
+			lastName: "",
+			email: "",
+			tel: "",
+			customerMessage: "",
+		});
+	};
+
+	const onSubmit = async (e) => {
+		e.preventDefault();
+		const result = await axios.post("http://localhost:5002/contact", data);
+		console.log(result);
+
+		if (result.data.success) {
+			setSubmitted(true);
+		}
+	};
+
+	if (submitted) {
+		return <div>Form Submitted</div>;
+	}
+
 	return (
 		<>
-			<form>
+			<form id="contactForm">
 				<h2>Send us a Message</h2>
 				<div className="formGroup">
 					<label for="firstName">
@@ -20,7 +64,13 @@ const ContactForm = () => {
 						<span className="formIcon">
 							<FontAwesomeIcon className="faMale" icon={faMale} />
 						</span>
-						<input type="text" name="firstName" />
+						<input
+							type="text"
+							name="firstName"
+							id="firstName"
+							value={data.firstName}
+							onChange={handleChange}
+						/>
 					</div>
 				</div>
 				<div className="formGroup">
@@ -31,7 +81,13 @@ const ContactForm = () => {
 						<span className="formIcon">
 							<FontAwesomeIcon className="faMale" icon={faMale} />
 						</span>
-						<input type="text" name="lastName" />
+						<input
+							type="text"
+							name="lastName"
+							id="lastName"
+							value={data.lastName}
+							onChange={handleChange}
+						/>
 					</div>
 				</div>
 				<div className="formGroup">
@@ -40,7 +96,13 @@ const ContactForm = () => {
 						<span className="formIcon">
 							<FontAwesomeIcon className="faPhone" icon={faPhone} />
 						</span>
-						<input type="tel" name="tel" />
+						<input
+							type="tel"
+							name="tel"
+							id="tel"
+							value={data.tel}
+							onChange={handleChange}
+						/>
 					</div>
 				</div>
 				<div className="formGroup">
@@ -49,7 +111,13 @@ const ContactForm = () => {
 						<span className="formIcon">
 							<FontAwesomeIcon className="faAt" icon={faAt} />
 						</span>
-						<input type="email" name="email" />
+						<input
+							type="email"
+							name="email"
+							id="email"
+							value={data.email}
+							onChange={handleChange}
+						/>
 					</div>
 				</div>
 				<div className="formGroup">
@@ -60,14 +128,21 @@ const ContactForm = () => {
 						</span>
 						<textarea
 							id="customerMessage"
+							className="customerMessage"
 							name="customerMessage"
 							required=""
 							rows="3"
+							value={data.message}
+							onChange={handleChange}
 						></textarea>
 					</div>
 				</div>
 				<div>
-					<button type="submit" className="buttonContact">
+					<button
+						//type="submit"
+						className="buttonContact"
+						onClick={onSubmit}
+					>
 						Send
 					</button>
 				</div>

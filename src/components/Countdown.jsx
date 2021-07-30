@@ -97,8 +97,8 @@ const SVGCircle = ({ radius }) => (
 	<svg className="countdownSVG">
 		<defs>
 			<linearGradient id="myGradient" gradientTransform="rotate(90)">
-				<stop offset="5%" stop-color="#bdb0bd" />
-				<stop offset="95%" stop-color="#754d78" />
+				<stop offset="5%" stopColor="#bdb0bd" />
+				<stop offset="95%" stopColor="#754d78" />
 			</linearGradient>
 		</defs>
 		<path

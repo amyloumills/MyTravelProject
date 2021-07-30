@@ -6,40 +6,35 @@ const SignIn = (props) => {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [bookingRef, setBookingRef] = useState("");
+	const [loginError, setLoginError] = useState(false);
 
-	function userValidation() {
-		return (
-			email.length > 0 &&
-			firstName.length > 0 &&
-			lastName.length > 0 &&
-			bookingRef.length > 0
-		);
-	}
 	const signInAPI = async () => {
+		if (
+			firstName.length === 0 ||
+			lastName.length === 0 ||
+			email.length === 0 ||
+			bookingRef.length === 0
+		) {
+			setLoginError(true); //defensive check
+		}
 		try {
-			const response = await axios
-				.post({
-					url: `http://localhost:5002/login`,
-					data: {
-						first_name: { firstName },
-						last_name: { lastName },
-						email: { email },
-						booking_ref: { bookingRef },
-					},
-				})
-				.then((result) => {
-					console.log(result);
-					//if valid, then move on to uservalidation
-				});
+			const response = await axios.post(`http://localhost:5002/login`, {
+				first_name: firstName,
+				last_name: lastName,
+				email: email,
+				booking_ref: bookingRef,
+			});
+			// console.log(response.headers);
+			if (response.data.loginSuccessful) {
+				props.setPage(2);
+			} else {
+				setLoginError(true);
+			}
 		} catch (error) {
 			console.log(error);
+			//could send to error404 with props here
 		}
 	};
-	function onSubmit(e) {
-		e.preventDefault();
-		signInAPI();
-		// const isValid = userValidation();
-	}
 
 	return (
 		<>
@@ -51,7 +46,6 @@ const SignIn = (props) => {
 				</p>
 				<p>First Name</p>
 				<input
-					onSubmit={onSubmit}
 					id="firstName"
 					value={firstName}
 					type="text"
@@ -59,7 +53,6 @@ const SignIn = (props) => {
 				/>
 				<p>Last Name</p>
 				<input
-					onSubmit={onSubmit}
 					id="lastName"
 					value={lastName}
 					type="text"
@@ -67,7 +60,6 @@ const SignIn = (props) => {
 				/>
 				<p>Booking Reference</p>
 				<input
-					onSubmit={onSubmit}
 					id="bookingRef"
 					value={bookingRef}
 					type="text"
@@ -76,7 +68,6 @@ const SignIn = (props) => {
 				/>
 				<p>Email</p>
 				<input
-					onSubmit={onSubmit}
 					id="email"
 					type="email"
 					onChange={(e) => setEmail(e.target.value)}
@@ -84,16 +75,15 @@ const SignIn = (props) => {
 			</div>
 			<button
 				className="signInButton"
-				onClick={() => props.setPage(2)}
+				onClick={() => signInAPI()}
 				type="submit"
-				disabled={!userValidation()}
 			>
 				View My Booking
 			</button>
+			{loginError && <h2>Please check your details</h2>}
 			<div>
 				<a
 					className="signInProblem"
-					onSubmit={onSubmit}
 					onClick={() => {
 						props.setPage(0);
 					}}

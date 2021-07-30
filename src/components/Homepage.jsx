@@ -8,7 +8,7 @@ const Homepage = () => {
 	return (
 		<>
 			<h1>Homepage</h1>
-			<h3>Failte gu Alba, Name!</h3>
+			<h3>Failte gu Alba!</h3>
 			<div className="dashboardImage">
 				<img src={Skye} alt="Isle of Skye" />
 			</div>
