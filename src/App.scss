@@ -166,7 +166,6 @@ textarea {
 	border: 1px solid #eee;
 	margin-bottom: 15px;
 	width: 85%;
-	height: 40px;
 	padding: 0;
 	margin: 0;
 }
@@ -346,7 +345,7 @@ textarea {
 	background-color: $palePurple;
 	@include breakpoint(mobileview) {
 		min-width: 100px;
-		min-height: 100px;
+		min-height: 300px;
 	}
 }
 .forecastItem {
@@ -376,15 +375,19 @@ textarea {
 }
 //SIGN IN PAGE
 .signIn {
-	padding: 40px;
+	padding: 0px;
 	text-align: center;
+}
+.signInP {
+	line-height: 30px;
+	font-size: 0.8em;
 }
 .signIn input[type="text"],
 .signIn input[type="email"] {
 	border: none;
 	display: block;
 	background: none;
-	margin: 20px auto;
+	margin: 10px auto;
 	text-align: center;
 	border: 2px solid $purple;
 	padding: 14px 10px;
@@ -477,6 +480,7 @@ textarea {
 		color: white;
 	}
 }
+
 .faBars {
 	display: block;
 	margin: 20px;

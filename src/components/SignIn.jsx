@@ -40,9 +40,8 @@ const SignIn = (props) => {
 		<>
 			<div className="signIn">
 				<h1>Sign in to view your booking</h1>
-				<p>
-					Please use the details you provided when booking your tour. Unsure?
-					Check your confirmation email.
+				<p className="signInP">
+					Booking details can be found on your confirmation email
 				</p>
 				<p>First Name</p>
 				<input

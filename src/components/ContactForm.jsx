@@ -28,15 +28,15 @@ const ContactForm = () => {
 		});
 	};
 
-	const resetForm = () => {
-		setData({
-			firstName: "",
-			lastName: "",
-			email: "",
-			tel: "",
-			customerMessage: "",
-		});
-	};
+	// const resetForm = () => {
+	// 	setData({
+	// 		firstName: "",
+	// 		lastName: "",
+	// 		email: "",
+	// 		tel: "",
+	// 		customerMessage: "",
+	// 	});
+	// };
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
@@ -49,7 +49,18 @@ const ContactForm = () => {
 	};
 
 	if (submitted) {
-		return <div>Form Submitted</div>;
+		return (
+			<div>
+				<p>
+					Thank you for your message, a member of our team will be in touch
+					shortly.
+				</p>
+				<p>
+					In the meantime, keep up to date and follow us on our social media
+					platforms below
+				</p>
+			</div>
+		);
 	}
 
 	return (
