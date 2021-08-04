@@ -42,7 +42,7 @@ const YourTour = () => {
 						<p>Edinburgh</p>
 					</div>
 				</div>
-				<div className="driverGuide">
+				<div>
 					<h2>Your Driver-Guide</h2>
 					<p>Jim</p>
 					<img className="driverGuide" src={Jim} alt="Driver-Guide Jim" />
