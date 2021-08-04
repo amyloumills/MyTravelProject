@@ -24,7 +24,8 @@ const SignIn = (props) => {
 				email: email,
 				booking_ref: bookingRef,
 			});
-			// console.log(response.headers);
+			//console.log(response.data.first_name);
+			localStorage.setItem("first_name", response.data.first_name);
 			if (response.data.loginSuccessful) {
 				props.setPage(2);
 			} else {

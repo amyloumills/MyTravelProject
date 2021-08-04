@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Homepage = () => {
-	const firstName = localStorage.getItem("request.body.first_name");
+	const firstName = localStorage.getItem("first_name");
 
 	return (
 		<>
 			<h1>Homepage</h1>
-			<h3>Failte gu Alba, </h3>
+			<h3>Failte gu Alba, {firstName}!</h3>
 			<div className="dashboardImage">
 				<img src={Skye} alt="Isle of Skye" />
 			</div>
