@@ -26,6 +26,7 @@ const SignIn = (props) => {
 			});
 			//console.log(response.data.first_name);
 			localStorage.setItem("first_name", response.data.first_name);
+			localStorage.setItem("token", response.data.token);
 			if (response.data.loginSuccessful) {
 				props.setPage(2);
 			} else {
