@@ -14,22 +14,16 @@ const YourTour = () => {
 	const [tourName, setTourName] = useState("");
 	const [tourDate, setTourDate] = useState("");
 	const [departureCity, setDepartureCity] = useState("");
-	const [tourTime, setTourTime] = useState("");
+	// const [tourTime, setTourTime] = useState("");
 
 	useEffect(async () => {
 		const results = await axios.post("http://localhost:5002/yourTour", {
 			token,
 		});
-		const options = {
-			weekday: "long",
-			year: "numeric",
-			month: "long",
-			day: "numeric",
-		};
-		console.log(results);
+		//console.log(results);
 		setTourName(results.data.results[0].tour);
 		setTourDate(results.data.results[0].date);
-		setTourTime(results.data.results[0].departure_time);
+		// setTourTime(results.data.results[0].departure_time);
 		setDepartureCity(results.data.results[0].location);
 	}, []);
 

@@ -1,14 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
-
-const countdownDate = new Date().getTime() + 86400000 * 3; //three days in the future. Has to be here as the function constantly updates the state
+import axios from "axios";
 
 const Countdown = () => {
 	const [timerDays, setTimerDays] = useState("00");
 	const [timerHours, setTimerHours] = useState("00");
 	const [timerMinutes, setTimerMinutes] = useState("00");
 	const [timerSeconds, setTimerSeconds] = useState("00");
+	const [tourDate, setTourDate] = useState("");
+
+	const token = localStorage.getItem("token");
+
+	useEffect(async () => {
+		const results = await axios.post("http://localhost:5002/yourTour", {
+			token,
+		});
+		setTourDate(results.data.results[0].date);
+		//console.log(tourDate);
+	}, []);
+	const countdownDate = Date.parse(tourDate);
+	//console.log(countdownDate);
 
 	var interval = useRef();
 
@@ -43,7 +55,7 @@ const Countdown = () => {
 		return () => {
 			clearInterval(interval.current);
 		};
-	});
+	}, []);
 
 	//SVG CIRCLE - Working out the radius
 	const daysRadius = mapNumber(timerDays, 30, 0, 0, 360);
