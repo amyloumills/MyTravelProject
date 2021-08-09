@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const SignIn = (props) => {
-	const [email, setEmail] = useState("");
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [bookingRef, setBookingRef] = useState("");
+	const [email, setEmail] = useState("alice@gmail.com");
+	const [firstName, setFirstName] = useState("Alice");
+	const [lastName, setLastName] = useState("Britton");
+	const [bookingRef, setBookingRef] = useState("TBT-1234567");
 	const [loginError, setLoginError] = useState(false);
 
 	const signInAPI = async () => {
@@ -71,6 +71,7 @@ const SignIn = (props) => {
 				<input
 					id="email"
 					type="email"
+					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 			</div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Countdown from "./Countdown";
 import Jim from "./images/Jim.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,8 +7,18 @@ import {
 	faMapMarkerAlt,
 	faBus,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const YourTour = () => {
+	const token = localStorage.getItem("token");
+
+	useEffect(async () => {
+		const results = await axios.post("http://localhost:5002/yourTour", {
+			token,
+		});
+		console.log(results);
+	}, []);
+
 	return (
 		<>
 			<div>
