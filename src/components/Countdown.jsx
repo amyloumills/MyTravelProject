@@ -1,68 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 
-const Countdown = () => {
-	const [timerDays, setTimerDays] = useState("00");
-	const [timerHours, setTimerHours] = useState("00");
-	const [timerMinutes, setTimerMinutes] = useState("00");
-	const [timerSeconds, setTimerSeconds] = useState("00");
-	const [tourDate, setTourDate] = useState("");
-
-	const token = localStorage.getItem("token");
-
-	useEffect(async () => {
-		const results = await axios.post("http://localhost:5002/yourTour", {
-			token,
-		});
-		setTourDate(results.data.results[0].date);
-		console.log(tourDate);
-	}, []);
-	//const countdownDate = Date.parse(tourDate);
-
-	const countdownDate = Math.floor(new Date(tourDate).getTime() / 1000);
-
-	console.log(countdownDate);
-
-	var interval = useRef();
-
-	const startTimer = () => {
-		interval = setInterval(() => {
-			const timeDifference = countdownDate - new Date().getTime(); //gets the time difference between now and the countdown date
-
-			const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); //unix time to days, etc
-
-			const hours = Math.floor(
-				(timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) // unix time to hours
-			);
-			const minutes = Math.floor(
-				(timeDifference % (1000 * 60 * 60)) / (1000 * 60) //unix time to minutes
-			);
-			const seconds = (timeDifference % (1000 * 60)) / 1000; //unix time to seconds
-
-			if (timeDifference < 0) {
-				//stop timer
-				clearInterval(interval.current);
-			} else {
-				//update time
-				setTimerDays(days);
-				setTimerHours(hours);
-				setTimerMinutes(minutes);
-				setTimerSeconds(seconds);
-			}
-		}, 50);
-	};
-	//componentdidmount
-	useEffect(() => {
-		startTimer();
-		return () => {
-			clearInterval(interval.current);
-		};
-	}, []);
-
+const Countdown = ({ timerDays, timerHours, timerMinutes, timerSeconds }) => {
 	//SVG CIRCLE - Working out the radius
-	const daysRadius = mapNumber(timerDays, 30, 0, 0, 360);
+	const daysRadius = mapNumber(timerDays, 30, 0, 70, 360);
 	const hoursRadius = mapNumber(timerHours, 24, 0, 0, 360);
 	const minutesRadius = mapNumber(timerMinutes, 60, 0, 0, 360);
 	const secondsRadius = mapNumber(timerSeconds, 60, 0, 0, 360);

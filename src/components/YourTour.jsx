@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Countdown from "./Countdown";
+import TimerData from "./TimerData";
 import Jim from "./images/Jim.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -68,7 +68,7 @@ const YourTour = () => {
 					<img className="driverGuide" src={Jim} alt="Driver-Guide Jim" />
 				</div>
 
-				<Countdown />
+				<TimerData />
 			</div>
 		</>
 	);
