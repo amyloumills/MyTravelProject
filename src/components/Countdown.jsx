@@ -17,10 +17,13 @@ const Countdown = () => {
 			token,
 		});
 		setTourDate(results.data.results[0].date);
-		//console.log(tourDate);
+		console.log(tourDate);
 	}, []);
-	const countdownDate = Date.parse(tourDate);
-	//console.log(countdownDate);
+	//const countdownDate = Date.parse(tourDate);
+
+	const countdownDate = Math.floor(new Date(tourDate).getTime() / 1000);
+
+	console.log(countdownDate);
 
 	var interval = useRef();
 
@@ -29,6 +32,7 @@ const Countdown = () => {
 			const timeDifference = countdownDate - new Date().getTime(); //gets the time difference between now and the countdown date
 
 			const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); //unix time to days, etc
+
 			const hours = Math.floor(
 				(timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) // unix time to hours
 			);

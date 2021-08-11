@@ -92,7 +92,7 @@ const Forecast = () => {
 								<p className="forecastItem">{days[dateObject.getDay()]}</p>
 								<img
 									className="forecastImage"
-									alt="forecast image"
+									alt="forecast"
 									src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
 								/>
 								<p className="forecastItem">{Math.round(day.temp.max)}°C</p>
