@@ -40,7 +40,10 @@ const ContactForm = () => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		const result = await axios.post("http://localhost:5002/contact", data);
+		const result = await axios.post(
+			"http://api.timbertours.co.uk/contact",
+			data
+		);
 		console.log(result);
 
 		if (result.data.success) {

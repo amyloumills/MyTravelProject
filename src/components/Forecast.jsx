@@ -29,7 +29,7 @@ const Forecast = () => {
 	const getWeather = async () => {
 		try {
 			const response = await axios.post(
-				"http://localhost:5002/getWeatherData",
+				"http://api.timbertours.co.uk/getWeatherData",
 				{}
 			);
 			console.log(response);
