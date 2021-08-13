@@ -7,14 +7,12 @@ import {
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-
 const SocialMedia = () => {
 	return (
-
 		<div className="socialContainer">
 			<h4>Follow Us:</h4>
 			<a
-				href="http://www.youtube.com/timberbushtours"
+				href="https://www.youtube.com/timberbushtours"
 				className="youtube social"
 			>
 				<FontAwesomeIcon icon={faYoutube} size="2x" />
@@ -38,7 +36,6 @@ const SocialMedia = () => {
 				<FontAwesomeIcon icon={faInstagram} size="2x" />
 			</a>
 		</div>
-		
 	);
 };
 

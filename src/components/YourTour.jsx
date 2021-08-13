@@ -17,7 +17,7 @@ const YourTour = () => {
 	// const [tourTime, setTourTime] = useState("");
 
 	useEffect(async () => {
-		const results = await axios.post("http://api.timbertours.co.uk/yourTour", {
+		const results = await axios.post("https://api.timbertours.co.uk/yourTour", {
 			token,
 		});
 		//console.log(results);

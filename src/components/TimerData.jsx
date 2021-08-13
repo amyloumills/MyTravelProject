@@ -13,7 +13,7 @@ const TimerData = () => {
 	const token = localStorage.getItem("token");
 
 	useEffect(async () => {
-		const results = await axios.post("http://api.timbertours.co.uk/yourTour", {
+		const results = await axios.post("https://api.timbertours.co.uk/yourTour", {
 			token,
 		});
 

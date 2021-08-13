@@ -29,7 +29,7 @@ const Forecast = () => {
 	const getWeather = async () => {
 		try {
 			const response = await axios.post(
-				"http://api.timbertours.co.uk/getWeatherData",
+				"https://api.timbertours.co.uk/getWeatherData",
 				{}
 			);
 			console.log(response);
@@ -75,7 +75,7 @@ const Forecast = () => {
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>
 					<img
-						src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`}
+						src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`}
 						alt="weather icon"
 						className="weatherIcon"
 					/>
@@ -93,7 +93,7 @@ const Forecast = () => {
 								<img
 									className="forecastImage"
 									alt="forecast"
-									src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
+									src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
 								/>
 								<p className="forecastItem">{Math.round(day.temp.max)}°C</p>
 								<p className="feelsLikeForecast">

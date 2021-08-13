@@ -41,7 +41,7 @@ const ContactForm = () => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		const result = await axios.post(
-			"http://api.timbertours.co.uk/contact",
+			"https://api.timbertours.co.uk/contact",
 			data
 		);
 		console.log(result);

@@ -18,7 +18,7 @@ const SignIn = (props) => {
 			setLoginError(true); //defensive check
 		}
 		try {
-			const response = await axios.post(`http://api.timbertours.co.uk/login`, {
+			const response = await axios.post(`https://api.timbertours.co.uk/login`, {
 				first_name: firstName,
 				last_name: lastName,
 				email: email,
