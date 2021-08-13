@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import Skye from "./images/SkyeCrop.png";
 import mobileSkyeView from "./images/mobileSkyeView.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +8,9 @@ import { faLanguage, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 const Homepage = () => {
 	const firstName = localStorage.getItem("first_name");
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<>
 			<h1>Homepage</h1>
@@ -21,15 +25,15 @@ const Homepage = () => {
 					alt="Coach on Skye"
 				/>
 			</div>
-			<p>
+			<p className="homepageP">
 				And a warm welcome to Scotland! We're looking forward to welcoming you
 				on tour!
 			</p>
-			<p>
+			<p className="homepageP">
 				Whether you're departing from Edinburgh, Glasgow or Inverness; we're
 				sure you will enjoy your time on board with us.
 			</p>
-			<p>
+			<p className="homepageP">
 				Here, you can view our translations, read our FAQs, find out more about
 				your tour and even view the upcoming weather.
 			</p>

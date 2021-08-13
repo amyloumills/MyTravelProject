@@ -4,6 +4,8 @@ import ReverseGeo from "./ReverseGeo";
 import { RotateSpinner } from "react-spinners-kit";
 
 const Forecast = () => {
+	const apiKey = `a2e9f900ab03f983ca54c821ab03cb37`;
+
 	const [latitude, setLatitude] = useState(0);
 	const [longitude, setLongitude] = useState(0);
 
@@ -28,33 +30,27 @@ const Forecast = () => {
 
 	const getWeather = async () => {
 		try {
-			const response = await axios.post(
-				"https://api.timbertours.co.uk/getWeatherData",
-				{}
+			const response = await axios.get(
+				`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={minutely,hourly,alerts}&appid=${apiKey}&units=metric`
 			);
-			console.log(response);
 
-			setTemperature(Math.round(response.data.result.current.temp));
-			setWeather(response.data.result.current.weather[0].main);
-			setFeelsLike(Math.round(response.data.result.current.feels_like));
-			setIconCode(response.data.result.current.weather[0].icon);
-			setDaily(response.data.result.daily); //this sets the forecast
+			setTemperature(Math.round(response.data.current.temp));
+			setWeather(response.data.current.weather[0].main);
+			setFeelsLike(Math.round(response.data.current.feels_like));
+			setIconCode(response.data.current.weather[0].icon);
+			setDaily(response.data.daily); //this sets the forecast
 		} catch (err) {
 			console.error(err);
 		}
 	};
 	//defensive checks
-	useEffect(
-		() => {
-			if (getWeather === null) {
-				return <RotateSpinner size={45} color="#686769" className="spinner" />;
-			} else {
-				getWeather();
-			}
-		}
-		// 	if (longitude && latitude) getWeather();
-		// }, [latitude, longitude]
-	);
+	useEffect(() => {
+		if (longitude && latitude) getWeather();
+	}, [latitude, longitude]);
+
+	if (!temperature || !weather) {
+		return <RotateSpinner size={45} color="#686769" className="spinner" />;
+	}
 
 	const days = [
 		"Sunday",
@@ -75,7 +71,7 @@ const Forecast = () => {
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>
 					<img
-						src={`https://openweathermap.org/img/wn/${iconCode}@2x.png`}
+						src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`}
 						alt="weather icon"
 						className="weatherIcon"
 					/>
@@ -92,8 +88,8 @@ const Forecast = () => {
 								<p className="forecastItem">{days[dateObject.getDay()]}</p>
 								<img
 									className="forecastImage"
-									alt="forecast"
-									src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
+									alt="forecast image"
+									src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
 								/>
 								<p className="forecastItem">{Math.round(day.temp.max)}°C</p>
 								<p className="feelsLikeForecast">

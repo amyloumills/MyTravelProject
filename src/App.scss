@@ -536,6 +536,9 @@ textarea {
 		display: none;
 	}
 }
+.homepageP {
+	padding: 0 15 0 15;
+}
 .translations {
 	@include breakpoint(desktopview) {
 		display: flex;

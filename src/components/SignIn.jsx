@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const SignIn = (props) => {
@@ -37,7 +37,9 @@ const SignIn = (props) => {
 			//could send to error404 with props here
 		}
 	};
-
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<>
 			<div className="signIn">
