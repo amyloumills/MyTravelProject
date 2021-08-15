@@ -11,6 +11,7 @@ const Homepage = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+	//scrolls to the top of the screen
 	return (
 		<>
 			<h1>Homepage</h1>
