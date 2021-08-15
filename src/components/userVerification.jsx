@@ -1,6 +1,8 @@
 import React from "react";
 import Joi from "joi";
 
+//******NOT CURRENTLY IN USE******//
+
 const userVerification = () => {
 	const signInSchema = Joi.object().keys({
 		firstName: Joi.string().min(3).max(15).required(),

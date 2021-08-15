@@ -84,7 +84,7 @@ const SignIn = (props) => {
 			>
 				View My Booking
 			</button>
-			{loginError && <h2>Please check your details</h2>}
+			{loginError && <h2>Oops. Please check your details and try again.</h2>}
 			<div>
 				<a
 					className="signInProblem"

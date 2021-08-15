@@ -152,11 +152,7 @@ const ContactForm = () => {
 					</div>
 				</div>
 				<div>
-					<button
-						//type="submit"
-						className="buttonContact"
-						onClick={onSubmit}
-					>
+					<button className="buttonContact" onClick={onSubmit}>
 						Send
 					</button>
 				</div>
