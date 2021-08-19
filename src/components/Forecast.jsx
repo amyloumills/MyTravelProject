@@ -8,10 +8,14 @@ const Forecast = () => {
 	const [feelsLike, setFeelsLike] = useState(0);
 	const [iconCode, setIconCode] = useState("");
 	const [daily, setDaily] = useState([]);
+	const [location, setLocation] = useState("");
+	const token = localStorage.getItem("token");
 
 	const getWeather = async () => {
 		try {
-			const response = await axios.post("http://localhost:5002/forecast", {});
+			const response = await axios.post("http://localhost:5002/forecast", {
+				token,
+			});
 			console.log(response);
 
 			setTemperature(Math.round(response.data.weatherResult.current.temp));
@@ -19,6 +23,7 @@ const Forecast = () => {
 			setFeelsLike(Math.round(response.data.weatherResult.current.feels_like));
 			setIconCode(response.data.weatherResult.current.weather[0].icon);
 			setDaily(response.data.weatherResult.daily); //this sets the forecast
+			setLocation(response.data.results.location);
 		} catch (err) {
 			console.error(err);
 		}
@@ -28,9 +33,9 @@ const Forecast = () => {
 		getWeather();
 	}, []);
 
-	// if (!temperature || !weather) {
-	// 	return <RotateSpinner size={45} color="#686769" className="spinner" />;
-	// }
+	if (!temperature || !weather) {
+		return <RotateSpinner size={45} color="#686769" className="spinner" />;
+	}
 
 	const days = [
 		"Sunday",
@@ -46,7 +51,7 @@ const Forecast = () => {
 		<>
 			<div className="container">
 				<div className="cards">
-					<h2>The weather at your departure point</h2>
+					<h2>The weather in {location}</h2>
 					<h2>{temperature}ºC</h2>
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>
