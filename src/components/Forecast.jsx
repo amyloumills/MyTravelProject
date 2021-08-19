@@ -1,56 +1,36 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ReverseGeo from "./ReverseGeo";
 import { RotateSpinner } from "react-spinners-kit";
 
 const Forecast = () => {
-	const apiKey = `a2e9f900ab03f983ca54c821ab03cb37`;
-
-	const [latitude, setLatitude] = useState(0);
-	const [longitude, setLongitude] = useState(0);
-
 	const [weather, setWeather] = useState("");
 	const [temperature, setTemperature] = useState(0);
 	const [feelsLike, setFeelsLike] = useState(0);
 	const [iconCode, setIconCode] = useState("");
 	const [daily, setDaily] = useState([]);
 
-	const savePositionToState = (position) => {
-		setLatitude(position.coords.latitude);
-		setLongitude(position.coords.longitude);
-	};
-
-	const getLocation = async () => {
-		await window.navigator.geolocation.getCurrentPosition(savePositionToState);
-	};
-
-	useEffect(() => {
-		getLocation();
-	}, []);
-
 	const getWeather = async () => {
 		try {
-			const response = await axios.get(
-				`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={minutely,hourly,alerts}&appid=${apiKey}&units=metric`
-			);
+			const response = await axios.post("http://localhost:5002/forecast", {});
+			console.log(response);
 
-			setTemperature(Math.round(response.data.current.temp));
-			setWeather(response.data.current.weather[0].main);
-			setFeelsLike(Math.round(response.data.current.feels_like));
-			setIconCode(response.data.current.weather[0].icon);
-			setDaily(response.data.daily); //this sets the forecast
+			setTemperature(Math.round(response.data.weatherResult.current.temp));
+			setWeather(response.data.weatherResult.current.weather[0].main);
+			setFeelsLike(Math.round(response.data.weatherResult.current.feels_like));
+			setIconCode(response.data.weatherResult.current.weather[0].icon);
+			setDaily(response.data.weatherResult.daily); //this sets the forecast
 		} catch (err) {
 			console.error(err);
 		}
 	};
 	//defensive checks
 	useEffect(() => {
-		if (longitude && latitude) getWeather();
-	}, [latitude, longitude]);
+		getWeather();
+	}, []);
 
-	if (!temperature || !weather) {
-		return <RotateSpinner size={45} color="#686769" className="spinner" />;
-	}
+	// if (!temperature || !weather) {
+	// 	return <RotateSpinner size={45} color="#686769" className="spinner" />;
+	// }
 
 	const days = [
 		"Sunday",
@@ -66,7 +46,7 @@ const Forecast = () => {
 		<>
 			<div className="container">
 				<div className="cards">
-					<ReverseGeo />
+					<h2>The weather at your departure point</h2>
 					<h2>{temperature}ºC</h2>
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>

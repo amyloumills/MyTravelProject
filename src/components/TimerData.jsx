@@ -48,7 +48,6 @@ const TimerData = () => {
 			}
 		}, 50);
 	};
-
 	useEffect(() => {
 		if (countdownDate === 0 || null) {
 			return <RotateSpinner size={45} color="#686769" className="spinner" />;
