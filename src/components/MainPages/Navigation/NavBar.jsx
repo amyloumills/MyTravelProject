@@ -1,13 +1,13 @@
 import React from "react";
-import Weather from "./Weather";
-import Homepage from "./Homepage";
-import SignIn from "./SignIn";
-import Contact from "./Contact";
-import YourTour from "./YourTour";
+import Weather from "../Weather/Weather";
+import Homepage from "../Homepage/Homepage";
+import SignIn from "../SignIn/SignIn";
+import Contact from "../Contact/Contact";
+import YourTour from "../YourTour/YourTour";
 import { useState } from "react";
 import Hamburger from "./Hamburger";
 import NoBurger from "./NoBurger";
-import ProblemSigningIn from "./ProblemSigningIn";
+import ProblemSigningIn from "../SignIn/ProblemSigningIn";
 
 const NavBar = () => {
 	const [page, setPage] = useState(1);
