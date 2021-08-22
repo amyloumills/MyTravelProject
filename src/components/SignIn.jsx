@@ -24,7 +24,7 @@ const SignIn = (props) => {
 				email: email,
 				booking_ref: bookingRef,
 			});
-			//console.log(response.data.first_name);
+
 			localStorage.setItem("first_name", response.data.first_name);
 			localStorage.setItem("token", response.data.token);
 			if (response.data.loginSuccessful) {

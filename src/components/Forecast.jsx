@@ -13,9 +13,13 @@ const Forecast = () => {
 
 	const getWeather = async () => {
 		try {
-			const response = await axios.post("http://localhost:5002/forecast", {
-				token,
-			});
+			const response = await axios.post(
+				"http://localhost:5002/forecast",
+				{
+					token,
+				},
+				[]
+			);
 			console.log(response);
 
 			setTemperature(Math.round(response.data.weatherResult.current.temp));
