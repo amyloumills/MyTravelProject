@@ -1,5 +1,5 @@
 import React from "react";
-import transparentLogo from "./images/transparentLogo.png";
+import transparentLogo from "../images/transparentLogo.png";
 
 export default function NoBurger({ page, setPage }) {
 	return (

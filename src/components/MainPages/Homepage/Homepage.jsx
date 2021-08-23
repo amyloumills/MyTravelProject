@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
-import Skye from "./images/SkyeCrop.png";
-import mobileSkyeView from "./images/mobileSkyeView.png";
+import Skye from "../images/SkyeCrop.png";
+import mobileSkyeView from "../images/mobileSkyeView.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLanguage, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 

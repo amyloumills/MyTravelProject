@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TimerData from "./TimerData";
-import Jim from "./images/Jim.png";
+import Jim from "../images/Jim.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCalendarAlt,
@@ -8,22 +8,29 @@ import {
 	faBus,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import SignIn from "../SignIn/SignIn";
 
 const YourTour = () => {
 	const token = localStorage.getItem("token");
 	const [tourName, setTourName] = useState("");
 	const [tourDate, setTourDate] = useState("");
 	const [departureCity, setDepartureCity] = useState("");
-	// const [tourTime, setTourTime] = useState("");
+	const [page, setPage] = useState(1);
+
+	// useEffect(() => {
+	// 	if (!token) {
+	// 		{
+	// 			page === 1 && <SignIn setPage={setPage} />;
+	// 		}
+	// 	}
+	// }, []);
 
 	useEffect(async () => {
 		const results = await axios.post("https://api.timbertours.co.uk/yourTour", {
 			token,
 		});
-		//console.log(results);
 		setTourName(results.data.results[0].tour);
 		setTourDate(results.data.results[0].date);
-		// setTourTime(results.data.results[0].departure_time);
 		setDepartureCity(results.data.results[0].location);
 	}, []);
 
