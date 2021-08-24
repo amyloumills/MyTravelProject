@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { RotateSpinner } from "react-spinners-kit";
-import SignIn from "../SignIn/SignIn";
 
 const Forecast = () => {
 	const [weather, setWeather] = useState("");
@@ -11,7 +10,6 @@ const Forecast = () => {
 	const [daily, setDaily] = useState([]);
 	const [location, setLocation] = useState("");
 	const token = localStorage.getItem("token");
-	const [page, setPage] = useState(1);
 
 	const getWeather = async () => {
 		try {
@@ -36,13 +34,7 @@ const Forecast = () => {
 	};
 	//defensive checks
 	useEffect(() => {
-		if (!token) {
-			{
-				page === 1 && <SignIn setPage={setPage} />;
-			}
-		} else {
-			getWeather();
-		}
+		getWeather();
 	}, []);
 
 	if (!temperature || !weather) {

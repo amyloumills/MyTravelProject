@@ -7,7 +7,7 @@ const SocialFeedFB = () => {
 		<>
 			<h2 className="instagramH2">#FollowTheAdventure</h2>
 			<InstagramFeed
-				token="IGQVJXR25tYllkTkFFRXg1MDJCQk1IRlZAmU0otcnJySk4waTBTYy1pLXRmUC1pUDRuOTFjVXdWZAW04ejMxdnc2R0pqQzBJUmpjblJyNmdqaG9TbEVvYmExeGRRT1pjTFM1Skt3Mlg1dC12QjNEcElOawZDZD"
+				token="IEAAEuLZBUT7AsBAJQSWkhSYtWiXToQqkDm4BVudP5QV8boIYKOZCNCIUG9QLMhAYZAMzlkG6VaWo2TkMdIyUXThypogLmSX3abKH64zZBUwztBa4jqtrsKNPuQvuuzqcgLY7ussehhSBZAd5TwC53b9EKWLx6SJpjrL2zZCpHJmb1heS7ypR51aEIfl5RSKEwPgMfkRTJphumdoIZAQEpgZCT"
 				counter="6"
 			/>
 		</>
