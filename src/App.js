@@ -1,27 +1,28 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
+import YourTour from "./components/MainPages/YourTour/YourTour";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Error404 from "./components/MainPages/Error404";
 import Homepage from "./components/MainPages/Homepage/Homepage";
 
-const App = ({ page, setPage }) => {
-	const [token, setToken] = useState(localStorage.getItem("token") || "");
+import SignIn from "./components/MainPages/SignIn/SignIn";
 
-	//console.log("Hi it's the", token);
-	if (token) {
-		//console.log("HEY IM HERE!");
-		{
-			page === 2 && <Homepage />;
-		}
-	} else {
-		return <Error404 />;
-	}
+//page 0 = Problems Signing In
+//page 1 = Sign In
+//page 2 = Homepage
+//page 3 = Weather
+//page 4 = Your Tour
+//page 5 = Contact
+
+const App = () => {
+	const [token, setToken] = useState(localStorage.getItem("token"));
+
 	return (
 		<>
-			<Header />
-			<Footer />
+			{token !== null ? <Homepage /> : <SignIn />}
+			<Footer />;
 		</>
 	);
 };
