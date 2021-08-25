@@ -11,6 +11,7 @@ import ProblemSigningIn from "../SignIn/ProblemSigningIn";
 
 const NavBar = () => {
 	const [page, setPage] = useState(1);
+	const [token, setToken] = useState(localStorage.getItem("token"));
 
 	return (
 		<>
@@ -23,11 +24,11 @@ const NavBar = () => {
 			</div>
 
 			{page === 0 && <ProblemSigningIn setPage={setPage} />}
-			{page === 1 && <SignIn setPage={setPage} />}
-			{page === 2 && <Homepage />}
-			{page === 3 && <Weather />}
-			{page === 4 && <YourTour />}
-			{page === 5 && <Contact />}
+			{token == null && page === 1 && <SignIn setPage={setPage} />}
+			{token == null ? <SignIn /> : page === 2 && <Homepage />}
+			{token == null ? <SignIn /> : page === 3 && <Weather />}
+			{token == null ? <SignIn /> : page === 4 && <YourTour />}
+			{token == null ? <SignIn /> : page === 5 && <Contact />}
 		</>
 	);
 };
