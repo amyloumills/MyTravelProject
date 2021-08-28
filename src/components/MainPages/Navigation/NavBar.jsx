@@ -22,13 +22,15 @@ const NavBar = () => {
 			<div className="noBurger">
 				<NoBurger page={page} setPage={setPage} />
 			</div>
-
+			{console.log(token)}
 			{page === 0 && <ProblemSigningIn setPage={setPage} />}
-			{token == null && page === 1 && <SignIn setPage={setPage} />}
-			{token == null ? <SignIn /> : page === 2 && <Homepage />}
-			{token == null ? <SignIn /> : page === 3 && <Weather />}
-			{token == null ? <SignIn /> : page === 4 && <YourTour />}
-			{token == null ? <SignIn /> : page === 5 && <Contact />}
+
+			{token && page === 1 && <Homepage />}
+			{token && page === 2 && <Homepage />}
+			{token && page === 3 && <Weather />}
+			{token && page === 4 && <YourTour />}
+			{token && page === 5 && <Contact />}
+			{token == null && <SignIn setPage={setPage} />}
 		</>
 	);
 };
