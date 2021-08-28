@@ -33,7 +33,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page > 0 && (
 							<li
 								onClick={() => {
 									setPage(2);
@@ -44,7 +44,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page > 0 && (
 							<li
 								onClick={() => {
 									setPage(3);
@@ -55,7 +55,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page > 0 && (
 							<li
 								onClick={() => {
 									setPage(4);
@@ -66,7 +66,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page > 0 && (
 							<li
 								onClick={() => {
 									setPage(5);
