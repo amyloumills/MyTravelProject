@@ -14,7 +14,7 @@ const Forecast = () => {
 	const getWeather = async () => {
 		try {
 			const response = await axios.post(
-				"http://localhost:5002/forecast",
+				"http://api.timbertours.co.uk/forecast",
 				{
 					token,
 				},

@@ -34,7 +34,6 @@ const Contact = () => {
 			</div>
 			<ContactForm />
 			<SocialMedia />
-			<SocialFeedFB />
 		</>
 	);
 };
