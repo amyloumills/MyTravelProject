@@ -9,6 +9,7 @@ export default function Hamburger({ page, setPage }) {
 	const toggleHamburger = () => {
 		setHamburgerOpen(!hamburgerOpen);
 	};
+	const token = localStorage.getItem("token");
 	return (
 		<>
 			<div className="hamburger" onClick={toggleHamburger}>
@@ -33,7 +34,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page >= 1 && token && (
 							<li
 								onClick={() => {
 									setPage(2);
@@ -44,7 +45,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page >= 1 && token && (
 							<li
 								onClick={() => {
 									setPage(3);
@@ -55,7 +56,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page >= 1 && token && (
 							<li
 								onClick={() => {
 									setPage(4);
@@ -66,7 +67,7 @@ export default function Hamburger({ page, setPage }) {
 							</li>
 						)}
 
-						{page > 1 && (
+						{page >= 1 && token && (
 							<li
 								onClick={() => {
 									setPage(5);
