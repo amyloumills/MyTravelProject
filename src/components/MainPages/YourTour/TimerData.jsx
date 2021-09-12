@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Countdown from "./Countdown";
 import { RotateSpinner } from "react-spinners-kit";
+import * as Constants from "../Utils/Constants";
 
 const TimerData = () => {
 	const [timerDays, setTimerDays] = useState("00");
@@ -14,12 +15,9 @@ const TimerData = () => {
 
 	useEffect(() => {
 		async function fetchTime() {
-			const results = await axios.post(
-				"https://api.timbertours.co.uk/yourTour",
-				{
-					token,
-				}
-			);
+			const results = await axios.post(Constants.TIMEURL, {
+				token,
+			});
 
 			const unixTime = new Date(results.data.results[0].date);
 			setCountdownDate(unixTime.getTime());

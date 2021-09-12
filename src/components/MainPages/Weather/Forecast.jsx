@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { RotateSpinner } from "react-spinners-kit";
+import * as Constants from "../Utils/Constants";
 
 const Forecast = () => {
 	const [weather, setWeather] = useState("");
@@ -14,7 +15,7 @@ const Forecast = () => {
 	const getWeather = async () => {
 		try {
 			const response = await axios.post(
-				"http://api.timbertours.co.uk/forecast",
+				Constants.WEATHERURL,
 				{
 					token,
 				},

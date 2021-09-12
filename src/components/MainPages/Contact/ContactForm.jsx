@@ -7,6 +7,7 @@ import {
 	faComments,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import * as Constants from "../Utils/Constants";
 
 const ContactForm = () => {
 	//collect data from the form
@@ -30,10 +31,7 @@ const ContactForm = () => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		const result = await axios.post(
-			"https://api.timbertours.co.uk/contact",
-			data
-		);
+		const result = await axios.post(Constants.CONTACTURL, data);
 		console.log(result);
 
 		if (result.data.success) {
