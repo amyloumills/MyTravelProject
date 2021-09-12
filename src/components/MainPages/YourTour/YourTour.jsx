@@ -15,14 +15,29 @@ const YourTour = () => {
 	const [tourDate, setTourDate] = useState("");
 	const [departureCity, setDepartureCity] = useState("");
 
-	useEffect(async () => {
-		const results = await axios.post("https://api.timbertours.co.uk/yourTour", {
-			token,
-		});
-		setTourName(results.data.results[0].tour);
-		setTourDate(results.data.results[0].date);
-		setDepartureCity(results.data.results[0].location);
-	}, []);
+	// useEffect(async () => {
+	// 	const results = await axios.post("https://api.timbertours.co.uk/yourTour", {
+	// 		token,
+	// 	});
+	// 	setTourName(results.data.results[0].tour);
+	// 	setTourDate(results.data.results[0].date);
+	// 	setDepartureCity(results.data.results[0].location);
+	// }, [token]);
+
+	useEffect(() => {
+		async function fetchData() {
+			const results = await axios.post(
+				"https://api.timbertours.co.uk/yourTour",
+				{
+					token,
+				}
+			);
+			setTourName(results.data.results[0].tour);
+			setTourDate(results.data.results[0].date);
+			setDepartureCity(results.data.results[0].location);
+		}
+		fetchData();
+	}, [token]);
 
 	var date = tourDate.substr(0, 10);
 

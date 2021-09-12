@@ -8,6 +8,7 @@ import { useState } from "react";
 import Hamburger from "./Hamburger";
 import NoBurger from "./NoBurger";
 import ProblemSigningIn from "../SignIn/ProblemSigningIn";
+import Terms from "../Terms";
 
 const NavBar = () => {
 	const [page, setPage] = useState(1);
@@ -22,7 +23,7 @@ const NavBar = () => {
 			<div className="noBurger">
 				<NoBurger page={page} setPage={setPage} />
 			</div>
-			{console.log(token, localStorage.getItem("token"))}
+
 			{token == null && page === 0 && <ProblemSigningIn setPage={setPage} />}
 			{token == null && page === 1 && <SignIn setPage={setPage} />}
 			{token && page === 1 && <Homepage />}
@@ -30,6 +31,7 @@ const NavBar = () => {
 			{token && page === 3 && <Weather />}
 			{token && page === 4 && <YourTour />}
 			{token && page === 5 && <Contact />}
+			{token && page === 6 && <Terms />}
 		</>
 	);
 };

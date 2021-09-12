@@ -12,14 +12,20 @@ const TimerData = () => {
 
 	const token = localStorage.getItem("token");
 
-	useEffect(async () => {
-		const results = await axios.post("https://api.timbertours.co.uk/yourTour", {
-			token,
-		});
+	useEffect(() => {
+		async function fetchTime() {
+			const results = await axios.post(
+				"https://api.timbertours.co.uk/yourTour",
+				{
+					token,
+				}
+			);
 
-		const unixTime = new Date(results.data.results[0].date);
-		setCountdownDate(unixTime.getTime());
-	}, []);
+			const unixTime = new Date(results.data.results[0].date);
+			setCountdownDate(unixTime.getTime());
+		}
+		fetchTime();
+	}, [token]);
 
 	var interval = useRef();
 

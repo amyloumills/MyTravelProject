@@ -86,14 +86,14 @@ const SignIn = (props) => {
 			</button>
 			{loginError && <h2>Oops. Please check your details and try again.</h2>}
 			<div>
-				<a
+				<button
 					className="signInProblem"
 					onClick={() => {
 						props.setPage(0);
 					}}
 				>
 					Problems Signing In?
-				</a>
+				</button>
 			</div>
 		</>
 	);

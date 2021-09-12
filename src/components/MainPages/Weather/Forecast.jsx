@@ -20,7 +20,6 @@ const Forecast = () => {
 				},
 				[]
 			);
-			console.log(response);
 
 			setTemperature(Math.round(response.data.weatherResult.current.temp));
 			setWeather(response.data.weatherResult.current.weather[0].main);
@@ -55,13 +54,13 @@ const Forecast = () => {
 		<>
 			<div className="container">
 				<div className="cards">
-					<h2>The weather in {location}</h2>
+					<h2>The weather forecast in {location}</h2>
 					<h2>{temperature}ºC</h2>
 					<h2>{weather}</h2>
 					<h4>Feels like {feelsLike}ºC</h4>
 					<img
 						src={`http://openweathermap.org/img/wn/${iconCode}@2x.png`}
-						alt="weather icon"
+						alt="weather"
 						className="weatherIcon"
 					/>
 				</div>
@@ -77,7 +76,7 @@ const Forecast = () => {
 								<p className="forecastItem">{days[dateObject.getDay()]}</p>
 								<img
 									className="forecastImage"
-									alt="forecast image"
+									alt="forecast"
 									src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} //adding in icons
 								/>
 								<p className="forecastItem">{Math.round(day.temp.max)}°C</p>

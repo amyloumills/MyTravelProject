@@ -509,6 +509,19 @@ textarea {
 		padding: 10px;
 	}
 }
+.termsButton {
+	height: 5vh;
+	display: fixed;
+	font-size: 0.7rem;
+	background-color: $white;
+	border: none;
+	color: black;
+	&:hover {
+		background-color: $purple;
+		border: none;
+		color: white;
+	}
+}
 
 //LOADING SPINNER
 .spinner {

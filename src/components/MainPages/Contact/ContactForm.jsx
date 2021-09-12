@@ -28,16 +28,6 @@ const ContactForm = () => {
 		});
 	};
 
-	// const resetForm = () => {
-	// 	setData({
-	// 		firstName: "",
-	// 		lastName: "",
-	// 		email: "",
-	// 		tel: "",
-	// 		customerMessage: "",
-	// 	});
-	// };
-
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		const result = await axios.post(
