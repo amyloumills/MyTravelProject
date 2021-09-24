@@ -4,7 +4,7 @@ import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
 const Countdown = ({ timerDays, timerHours, timerMinutes, timerSeconds }) => {
 	//SVG CIRCLE - Working out the radius
-	const daysRadius = mapNumber(timerDays, 40, 0, 0, 360);
+	const daysRadius = mapNumber(timerDays, 40, 0, 50, 360);
 	const hoursRadius = mapNumber(timerHours, 24, 0, 0, 360);
 	const minutesRadius = mapNumber(timerMinutes, 60, 0, 0, 360);
 	const secondsRadius = mapNumber(timerSeconds, 60, 0, 0, 360);

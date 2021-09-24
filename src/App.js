@@ -10,6 +10,7 @@ import Header from "./components/Header";
 //page 3 = Weather
 //page 4 = Your Tour
 //page 5 = Contact
+//page 6 = Terms
 
 const App = () => {
 	return (
