@@ -21,15 +21,33 @@ const Contact = () => {
 
 			<div className="contactContainer">
 				<FontAwesomeIcon icon={faPhone} />
-				<p>0131 226 6066 (0730-1900 daily)</p>
+				<p>
+					<a href="tel:01312266066" className="telContact">
+						0131 226 6066
+					</a>{" "}
+					(0730-1900 daily)
+				</p>
 			</div>
 			<div className="contactContainer">
 				<FontAwesomeIcon icon={faAt} />
-				<p>tours@timberbushtours.com</p>
+				<p>
+					<a href="mailto:tours@timberbushtours.com" className="telContact">
+						tours@timberbushtours.com
+					</a>
+				</p>
 			</div>
 			<div className="contactContainer">
 				<FontAwesomeIcon icon={faMapMarkerAlt} />
-				<p>555 Castlehill, Edinburgh, EH1 2ND</p>
+				<p>
+					<a
+						href="https://goo.gl/maps/eevhbuauxhM1s6GQ9"
+						className="telContact"
+						target="_blank"
+						rel="noreferrer"
+					>
+						555 Castlehill, Edinburgh, EH1 2ND
+					</a>
+				</p>
 			</div>
 			<ContactForm />
 			<SocialMedia />

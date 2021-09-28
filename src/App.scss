@@ -101,6 +101,7 @@ button {
 	text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
 	text-align: center;
 	transition: all 0.2s;
+
 	&:hover {
 		cursor: pointer;
 		border-color: rgba(255, 255, 255, 1);
@@ -123,7 +124,11 @@ button {
 		cursor: pointer;
 		color: #000000;
 		background-color: #ffffff;
+		a {
+			color: black;
+		}
 	}
+
 	display: inline-block;
 	padding: 0.35em 1.2em;
 	border: 0.1em solid #ffffff;
@@ -140,6 +145,10 @@ button {
 		font-size: 1.5em;
 		padding-top: 20px;
 	}
+}
+.telContact {
+	text-decoration: none;
+	color: white;
 }
 .logoHorizontal {
 	width: 30vw;
@@ -232,7 +241,7 @@ textarea {
 			font-size: 1.5em;
 		}
 		button {
-			width: 50%;
+			width: 75%;
 			height: 50px;
 			font-size: 1.1em;
 		}
@@ -416,9 +425,8 @@ textarea {
 .signInProblem {
 	font-size: small;
 	text-decoration: none;
-	color: black;
+	color: white;
 	&:hover {
-		font-weight: 700;
 		cursor: pointer;
 	}
 }
@@ -589,7 +597,7 @@ textarea {
 			font-size: 1.5em;
 		}
 		button {
-			width: 50%;
+			width: 75%;
 			height: 50px;
 			font-size: 1.1em;
 		}
@@ -602,3 +610,4 @@ textarea {
 		}
 	}
 }
+//LATEST CHANGES
