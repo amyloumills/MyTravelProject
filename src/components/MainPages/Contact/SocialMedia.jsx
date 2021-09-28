@@ -14,6 +14,7 @@ const SocialMedia = () => {
 			<a
 				href="https://www.youtube.com/timberbushtours"
 				className="youtube social"
+				alt="Youtube link"
 			>
 				<FontAwesomeIcon icon={faYoutube} size="2x" />
 			</a>
