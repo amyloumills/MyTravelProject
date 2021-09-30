@@ -8,6 +8,7 @@ import {
 	faBus,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import * as Constants from "../Utils/Constants";
 
 const YourTour = () => {
 	const token = localStorage.getItem("token");
@@ -26,12 +27,9 @@ const YourTour = () => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const results = await axios.post(
-				"https://api.timbertours.co.uk/yourTour",
-				{
-					token,
-				}
-			);
+			const results = await axios.post(Constants.TIMEURL, {
+				token,
+			});
 			setTourName(results.data.results[0].tour);
 			setTourDate(results.data.results[0].date);
 			setDepartureCity(results.data.results[0].location);
